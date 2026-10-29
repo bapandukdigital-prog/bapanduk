@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Mode Pedagang</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#8A5A12}a:hover{color:#5E3D0B}
+@keyframes bp-wave{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+@keyframes bp-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bp-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+@keyframes bp-flash{0%{background:#F6E7C8}100%{background:#FFFFFF}}
+.bp-wave span{display:block;width:5px;border-radius:3px;transform-origin:center;animation:bp-wave .9s ease-in-out infinite}
+.bp-wave-light span{background:#F6EAD2}
+.bp-wave-red span{background:#9C2E1C}
+.bp-rise{animation:bp-rise .35s ease-out both}
+.bp-ring{animation:bp-ring 1.4s ease-out infinite}
+.bp-ring2{animation:bp-ring 1.4s ease-out .5s infinite}
+.bp-flash{animation:bp-flash 1.6s ease-out both}
+.bp-scroll::-webkit-scrollbar{display:none}
+.bp-scroll{scrollbar-width:none}
+.bp-scroll > *{flex-shrink:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; background: #FBF7F0; color: #24180F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+  <header style="background: #1E3A32; padding: 54px 20px 18px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #E4D8C0">Mode pedagang</p>
+      <h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 32px; line-height: 1.1; color: #F6EAD2">Bapanduk</h1>
+    </div>
+    <div style="height: 48px; display: flex; align-items: center; gap: 8px; padding: 0 16px 0 6px; border-radius: 24px; background: #D8962A">
+      <span style="width: 38px; height: 38px; border-radius: 19px; background: #F6EAD2; display: flex; align-items: center; justify-content: center">
+        <svg width="30" height="20" viewBox="0 0 44 26" aria-hidden="true"><path d="M2 18 L22 4 L42 18 Q22 25 2 18 Z" fill="#D8962A" stroke="#24180F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M22 4 V19" stroke="#24180F" stroke-width="1.2"></path></svg>
+      </span>
+      <span style="font-size: 16px; font-weight: 800; color: #24180F">Acil Khadijah</span>
+    </div>
+  </header>
+  <svg width="390" height="12" viewBox="0 0 390 12" aria-hidden="true" style="display: block; flex-shrink: 0; background: #1E3A32">
+    <defs>
+      <linearGradient id="sasiranganC" x1="0" y1="0" x2="390" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#D8962A"></stop>
+        <stop offset="0.3" stop-color="#C4572A"></stop>
+        <stop offset="0.55" stop-color="#9C2E1C"></stop>
+        <stop offset="0.8" stop-color="#6B2A55"></stop>
+        <stop offset="1" stop-color="#3E6B4F"></stop>
+      </linearGradient>
+      <pattern id="gigiHaruanC" width="16" height="12" patternUnits="userSpaceOnUse">
+        <path d="M0 0 L8 0 L0 12 Z M8 0 L16 0 L16 12 Z" fill="#1E3A32"></path>
+        <path d="M4.5 12 L8 6.5 L11.5 12 Z" fill="#24180F" fill-opacity="0.35"></path>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="390" height="12" fill="url(#sasiranganC)"></rect>
+    <rect x="0" y="0" width="390" height="12" fill="url(#gigiHaruanC)"></rect>
+  </svg>
+
+  <main class="bp-scroll" style="flex: 1; overflow-y: auto; padding: 18px 16px 28px; display: flex; flex-direction: column; gap: 16px">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-radius: 16px; background: #F2E9DA">
+      <span style="display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 800; color: #24180F">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#24180F" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+        {{today}}
+      </span>
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; color: #1E3A32">
+        <span style="width: 12px; height: 12px; border-radius: 6px; background: #1E3A32"></span>
+        Buka
+      </span>
+    </div>
+
+    <section aria-labelledby="dapatJudul" style="position: relative; overflow: hidden; border: 3px solid #1E3A32; border-radius: 24px; padding: 30px 20px 24px; text-align: center; background: #FFFFFF">
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 10px; background: linear-gradient(90deg, #D8962A, #C4572A, #9C2E1C, #6B2A55, #3E6B4F)"></div>
+      <p id="dapatJudul" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #1E3A32">Pendapatan hari ini</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 12px">
+        <svg width="44" height="44" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.8" fill="#D8962A" stroke="#24180F" stroke-width="0.9"></circle><path d="M10 4.8 L14.2 10 L10 15.2 L5.8 10 Z" fill="none" stroke="#24180F" stroke-width="1.1" stroke-linejoin="round"></path></svg>
+        <span aria-live="polite" style="font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: #24180F">{{coins}}</span>
+        <span style="align-self: flex-end; margin-bottom: 8px; font-size: 20px; font-weight: 800; color: #1E3A32">koin</span>
+      </div>
+      <div style="margin: 16px auto 0; padding: 14px 18px; border-radius: 16px; background: #F2E9DA">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; color: #6A5644">Setara uang tunai</p>
+        <p style="margin: 2px 0 0; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; color: #1E3A32">Rp {{rupiah}}</p>
+      </div>
+      <p style="margin: 14px 0 0; display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 12px; background: #E3EBE4; font-size: 15px; font-weight: 800; color: #1E3A32">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        {{trendText}}
+      </p>
+    </section>
+
+    <section aria-labelledby="qrJudul" style="border: 2px solid #E2D4BE; border-radius: 20px; padding: 16px; background: #FFFFFF; display: flex; align-items: center; gap: 16px">
+      <button onClick="{{openQr}}" aria-label="Perbesar QR jukung" style="width: 112px; height: 112px; flex-shrink: 0; padding: 0; border: 2px solid #24180F; border-radius: 14px; background: #FBF7F0; overflow: hidden; cursor: pointer">
+        <img src="assets/qr-jukung-khadijah.png" alt="QR jukung Acil Khadijah" style="width: 108px; height: 108px; display: block">
+      </button>
+      <span style="display: flex; flex-direction: column; gap: 4px">
+        <h2 id="qrJudul" style="margin: 0; font-size: 17px; font-weight: 800; color: #24180F">QR jukung acil</h2>
+        <span style="font-size: 14px; line-height: 1.4; color: #4E3D2E">Tunjukkan ke wisatawan supaya dipindai sebelum bapanduk.</span>
+        <button onClick="{{openQr}}" style="align-self: flex-start; min-height: 44px; padding: 0; border: none; background: transparent; font-family: inherit; font-size: 14px; font-weight: 800; color: #8A5A12; text-decoration: underline; cursor: pointer">Perbesar QR</button>
+      </span>
+    </section>
+
+    <section aria-labelledby="rekamJudul" style="border: 3px solid {{recBorder}}; border-radius: 24px; padding: 20px 18px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <h2 id="rekamJudul" style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #24180F">Rekam e-akad</h2>
+      <p style="margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: #4E3D2E">Ketuk tombol, ucapkan kesepakatan dengan pembeli, lalu ketuk lagi untuk berhenti.</p>
+
+      <sc-if value="{{notReview}}" hint-placeholder-val="{{ true }}">
+        <div style="position: relative; width: 120px; height: 120px; margin-top: 18px">
+          <sc-if value="{{isRec}}" hint-placeholder-val="{{ false }}">
+            <span class="bp-ring" style="position: absolute; inset: 0; border-radius: 60px; border: 3px solid #9C2E1C"></span>
+            <span class="bp-ring2" style="position: absolute; inset: 0; border-radius: 60px; border: 3px solid #9C2E1C"></span>
+          </sc-if>
+          <button onClick="{{toggleRec}}" aria-label="{{recAria}}" style="position: absolute; inset: 0; border-radius: 60px; border: none; background: #9C2E1C; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 24px rgba(156, 46, 28, 0.35)">
+            <sc-if value="{{isIdle}}" hint-placeholder-val="{{ true }}">
+              <svg width="48" height="48" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"></path></svg>
+            </sc-if>
+            <sc-if value="{{isRec}}" hint-placeholder-val="{{ false }}">
+              <span style="width: 36px; height: 36px; border-radius: 8px; background: #FFFFFF"></span>
+            </sc-if>
+          </button>
+        </div>
+        <p aria-live="polite" style="margin: 16px 0 0; font-size: 20px; font-weight: 800; letter-spacing: 0.04em; color: {{recColor}}">{{recText}}</p>
+        <sc-if value="{{isRec}}" hint-placeholder-val="{{ false }}">
+          <div class="bp-wave bp-wave-red" aria-hidden="true" style="display: flex; align-items: center; gap: 5px; height: 34px; margin-top: 10px">
+            <span style="height: 14px"></span><span style="height: 26px; animation-delay: .1s"></span><span style="height: 34px; animation-delay: .2s"></span><span style="height: 20px; animation-delay: .3s"></span><span style="height: 30px; animation-delay: .15s"></span><span style="height: 16px; animation-delay: .25s"></span><span style="height: 28px; animation-delay: .05s"></span><span style="height: 12px; animation-delay: .35s"></span>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <sc-if value="{{isReview}}" hint-placeholder-val="{{ false }}">
+        <div class="bp-rise" style="width: 100%; margin-top: 16px; display: flex; flex-direction: column; gap: 14px; text-align: left">
+          <button onClick="{{playDraft}}" style="min-height: 60px; display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 16px; border: 2px solid #1E3A32; background: {{draftBg}}; font-family: inherit; text-align: left; cursor: pointer">
+            <span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; background: #1E3A32; display: flex; align-items: center; justify-content: center">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L19 12 L8 19 Z" fill="#F6EAD2"></path></svg>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 17px; font-weight: 800; color: #24180F">{{draftLabel}}</span>
+              <span style="font-size: 13px; color: #6A5644">Rekaman suara · {{draftLen}}</span>
+            </span>
+          </button>
+
+          <div>
+            <p style="margin: 0 0 8px; font-size: 15px; font-weight: 800; color: #24180F">Dagangan yang dipanduk</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{items}}" as="it" hint-placeholder-count="4">
+                <button onClick="{{it.pick}}" aria-pressed="{{it.pressed}}" style="min-height: 48px; padding: 0 16px; border-radius: 14px; border: 2px solid {{it.border}}; background: {{it.bg}}; color: {{it.color}}; font-family: inherit; font-size: 16px; font-weight: 800; cursor: pointer">{{it.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+            <p style="margin: 0; font-size: 15px; font-weight: 800; color: #24180F">Koin diterima</p>
+            <span style="display: flex; align-items: center; gap: 12px">
+              <button onClick="{{decK}}" aria-label="Kurangi koin" style="width: 52px; height: 52px; border-radius: 16px; border: 2px solid #1E3A32; background: #FFFFFF; color: #1E3A32; font-family: inherit; font-size: 28px; font-weight: 700; cursor: pointer">−</button>
+              <span aria-live="polite" style="min-width: 44px; text-align: center; font-size: 28px; font-weight: 800; font-variant-numeric: tabular-nums; color: #24180F">{{draftKoin}}</span>
+              <button onClick="{{incK}}" aria-label="Tambah koin" style="width: 52px; height: 52px; border-radius: 16px; border: none; background: #1E3A32; color: #F6EAD2; font-family: inherit; font-size: 28px; font-weight: 700; cursor: pointer">+</button>
+            </span>
+          </div>
+
+          <div style="display: flex; gap: 10px">
+            <button onClick="{{discard}}" style="flex: 1; height: 56px; border-radius: 16px; border: 2px solid #C7B796; background: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 800; color: #24180F; cursor: pointer">Ulangi</button>
+            <button onClick="{{saveTrx}}" style="flex: 2; height: 56px; border-radius: 16px; border: none; background: #1E3A32; font-family: inherit; font-size: 16px; font-weight: 800; color: #F6EAD2; cursor: pointer">Simpan transaksi</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{hasNote}}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.4; color: #6A5644">{{micNote}}</p>
+      </sc-if>
+    </section>
+
+    <section aria-labelledby="riwayatJudul" style="border: 2px solid #E2D4BE; border-radius: 20px; overflow: hidden; background: #FFFFFF">
+      <h2 id="riwayatJudul" style="margin: 0; padding: 14px 18px 10px; font-size: 16px; font-weight: 800; letter-spacing: 0.04em; color: #24180F; border-bottom: 1.5px solid #F2E9DA">Bapanduk hari ini</h2>
+      <sc-for list="{{trx}}" as="t" hint-placeholder-count="3">
+        <div class="{{t.flash}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 18px; border-bottom: 1px solid #F2E9DA">
+          <span style="width: 42px; flex-shrink: 0; font-size: 13px; font-weight: 700; color: #6A5644">{{t.time}}</span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 15px; font-weight: 800; color: #24180F">{{t.item}}</span>
+            <span style="font-size: 13px; color: #6A5644">{{t.buyer}}</span>
+          </span>
+          <span style="font-size: 18px; font-weight: 800; color: #1E3A32; white-space: nowrap">+{{t.koin}}</span>
+          <sc-if value="{{t.hasVoice}}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{t.play}}" aria-label="Putar e-akad {{t.item}}" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; border: none; background: {{t.playBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L19 12 L8 19 Z" fill="{{t.playFg}}"></path></svg>
+            </button>
+          </sc-if>
+        </div>
+      </sc-for>
+    </section>
+
+    <button onClick="{{playLast}}" aria-pressed="{{playPressed}}" style="width: 100%; display: flex; align-items: center; gap: 16px; padding: 18px; border-radius: 22px; border: 3px solid {{playBorder}}; background: {{playBg}}; text-align: left; font-family: inherit; cursor: pointer; transition: background 0.3s">
+      <span style="width: 64px; height: 64px; flex-shrink: 0; border-radius: 32px; background: {{playDisc}}; display: flex; align-items: center; justify-content: center">
+        <sc-if value="{{notPlaying}}" hint-placeholder-val="{{ true }}">
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L19 12 L8 19 Z" fill="#F6EAD2"></path></svg>
+        </sc-if>
+        <sc-if value="{{lastPlaying}}" hint-placeholder-val="{{ false }}">
+          <div class="bp-wave bp-wave-light" style="display: flex; align-items: center; gap: 4px; height: 30px">
+            <span style="height: 14px"></span><span style="height: 28px; animation-delay: .15s"></span><span style="height: 20px; animation-delay: .3s"></span><span style="height: 26px; animation-delay: .1s"></span>
+          </div>
+        </sc-if>
+      </span>
+      <span style="display: flex; flex-direction: column; gap: 3px">
+        <span style="font-size: 19px; font-weight: 800; line-height: 1.2; color: {{playTitle}}">{{playText}}</span>
+        <span style="font-size: 14px; font-weight: 600; color: {{playSub}}">{{lastSub}}</span>
+      </span>
+    </button>
+
+    <button onClick="{{withdraw}}" aria-pressed="{{wPressed}}" style="width: 100%; display: flex; align-items: center; gap: 16px; padding: 22px 20px; border-radius: 24px; border: none; background: {{wBg}}; text-align: left; font-family: inherit; cursor: pointer; transition: background 0.3s; box-shadow: 0 10px 24px rgba(36, 24, 15, 0.22)">
+      <sc-if value="{{notWithdrawn}}" hint-placeholder-val="{{ true }}">
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#F6EAD2" stroke-width="1.8" stroke-linejoin="round" style="flex-shrink: 0"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="3"></circle><path d="M6 9.5v5M18 9.5v5"></path></svg>
+      </sc-if>
+      <sc-if value="{{withdrawn}}" hint-placeholder-val="{{ false }}">
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#F6EAD2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M5 12.5 L10 17 L19 7"></path></svg>
+      </sc-if>
+      <span style="display: flex; flex-direction: column; gap: 3px">
+        <span style="font-size: 21px; font-weight: 800; line-height: 1.2; color: #FFFFFF">{{wTitle}}</span>
+        <span style="font-size: 15px; font-weight: 600; color: #F6EAD2">{{wSub}}</span>
+      </span>
+    </button>
+
+    <section aria-labelledby="bantuJudul" style="border-radius: 18px; border: 2px solid #DDB26A; background: #F6E7C8; overflow: hidden">
+      <h2 id="bantuJudul" style="margin: 0; padding: 14px 18px 4px; font-size: 16px; font-weight: 800; color: #24180F">Perlu bantuan? Kiyau kami</h2>
+      <a href="tel:08115100200" style="display: flex; align-items: center; gap: 14px; padding: 12px 18px; text-decoration: none">
+        <span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; background: #FBF7F0; display: flex; align-items: center; justify-content: center">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#24180F" stroke-width="1.9" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"></path></svg>
+        </span>
+        <span style="display: flex; flex-direction: column; gap: 1px">
+          <span style="font-size: 14px; font-weight: 700; color: #4E3D2E">Petugas posko Bapanduk</span>
+          <span style="font-size: 19px; font-weight: 800; letter-spacing: 0.02em; color: #24180F">0811-5100-200</span>
+        </span>
+      </a>
+      <a href="tel:08001122000" style="display: flex; align-items: center; gap: 14px; padding: 12px 18px 16px; border-top: 1px solid #E8CF97; text-decoration: none">
+        <span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; background: #1E3A32; color: #F6EAD2; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800">KS</span>
+        <span style="display: flex; flex-direction: column; gap: 1px">
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #4E3D2E">Bank Kalsel <span style="padding: 1px 6px; border-radius: 6px; background: #1E3A32; color: #F6EAD2; font-size: 10px; font-weight: 800; letter-spacing: 0.06em">MITRA</span></span>
+          <span style="font-size: 19px; font-weight: 800; letter-spacing: 0.02em; color: #24180F">0800-1122-000</span>
+        </span>
+      </a>
+    </section>
+
+    <a href="Masuk.dc.html" style="align-self: center; min-height: 44px; display: flex; align-items: center; font-size: 14px; font-weight: 700">Keluar dari mode pedagang</a>
+  </main>
+
+  <sc-if value="{{qrOpen}}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-labelledby="qrBesar" style="position: absolute; inset: 0; z-index: 10; background: #FBF7F0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px; text-align: center">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Pindai untuk bapanduk</p>
+      <h2 id="qrBesar" style="margin: 6px 0 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; color: #24180F">Jukung Acil Khadijah</h2>
+      <div style="margin-top: 24px; padding: 14px; border-radius: 22px; border: 3px solid #24180F; background: #FBF7F0">
+        <img src="assets/qr-jukung-khadijah.png" alt="QR jukung Acil Khadijah" style="width: 280px; height: 280px; display: block">
+      </div>
+      <p style="margin: 18px 0 0; font-size: 15px; line-height: 1.45; color: #4E3D2E">Iwak sungai · Pasar Terapung Muara Kuin</p>
+      <button onClick="{{closeQr}}" style="margin-top: 28px; width: 100%; height: 56px; border-radius: 16px; border: none; background: #1E3A32; color: #F6EAD2; font-family: inherit; font-size: 16px; font-weight: 800; cursor: pointer">Tutup</button>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rec: 'idle', secs: 0, real: false, micNote: '', draftUrl: null, draftSecs: 0,
+      item: 'Iwak segar', draftKoin: 6, playing: null, withdrawnAmt: 0, withdrawn: false, newId: null, qrOpen: false,
+      trx: [
+        { id: 't3', time: '06.25', item: 'Iwak bakar, bayar koin', buyer: 'Wisatawan Ahmad', koin: 26, url: null, secs: 5 },
+        { id: 't2', time: '05.40', item: 'Iwak asin ⇄ wadai', buyer: 'Wisatawan Sari', koin: 12, url: null, secs: 4 },
+        { id: 't1', time: '05.12', item: 'Iwak segar ⇄ kangkung', buyer: 'Wisatawan Budi', koin: 8, url: null, secs: 6 }
+      ]
+    };
+    this.timer = null; this.playTimer = null; this.stream = null; this.recorder = null; this.chunks = []; this.audio = null;
+  }
+  componentWillUnmount() {
+    if (this.timer) clearInterval(this.timer);
+    if (this.playTimer) clearTimeout(this.playTimer);
+    this.stopStream();
+    if (this.audio) { try { this.audio.pause(); } catch (e) {} }
+  }
+  stopStream() {
+    if (this.stream) { try { this.stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) {} this.stream = null; }
+  }
+  startTimer() {
+    var self = this;
+    if (this.timer) clearInterval(this.timer);
+    this.timer = setInterval(function () {
+      self.setState(function (s) { return { secs: s.secs + 1 }; });
+    }, 1000);
+  }
+  startRec() {
+    var self = this;
+    this.chunks = [];
+    this.setState({ rec: 'rec', secs: 0, micNote: '', draftUrl: null });
+    this.startTimer();
+    var ok = typeof navigator !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && typeof MediaRecorder !== 'undefined';
+    if (!ok) {
+      this.setState({ real: false, micNote: 'Mikrofon tidak tersedia di tampilan ini, jadi rekaman disimulasikan. Di aplikasi asli suara acil akan terekam.' });
+      return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      if (self.state.rec !== 'rec') { stream.getTracks().forEach(function (t) { t.stop(); }); return; }
+      self.stream = stream;
+      var r = new MediaRecorder(stream);
+      self.recorder = r;
+      r.ondataavailable = function (e) { if (e.data && e.data.size) self.chunks.push(e.data); };
+      r.onstop = function () {
+        var blob = new Blob(self.chunks, { type: r.mimeType || 'audio/webm' });
+        var url = URL.createObjectURL(blob);
+        self.setState({ draftUrl: url });
+        self.stopStream();
+      };
+      r.start();
+      self.setState({ real: true, micNote: 'Suara pian sedang direkam lewat mikrofon perangkat ini.' });
+    }).catch(function () {
+      self.setState({ real: false, micNote: 'Izin mikrofon ditolak atau diblokir browser, jadi rekaman disimulasikan. Izinkan mikrofon untuk merekam suara asli.' });
+    });
+  }
+  stopRec() {
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    if (this.recorder && this.recorder.state !== 'inactive') { try { this.recorder.stop(); } catch (e) {} }
+    else this.stopStream();
+    this.recorder = null;
+    var secs = Math.max(1, this.state.secs);
+    this.setState({ rec: 'review', draftSecs: secs });
+  }
+  play(key, url, secs) {
+    var self = this;
+    if (this.audio) { try { this.audio.pause(); } catch (e) {} this.audio = null; }
+    if (this.playTimer) { clearTimeout(this.playTimer); this.playTimer = null; }
+    if (this.state.playing === key) { this.setState({ playing: null }); return; }
+    this.setState({ playing: key });
+    if (url) {
+      try {
+        var a = new Audio(url);
+        this.audio = a;
+        a.onended = function () { if (self.state.playing === key) self.setState({ playing: null }); };
+        a.play().catch(function () {
+          self.playTimer = setTimeout(function () { self.setState({ playing: null }); }, (secs || 3) * 1000);
+        });
+        return;
+      } catch (e) {}
+    }
+    this.playTimer = setTimeout(function () { self.setState({ playing: null }); }, Math.min(secs || 3, 6) * 1000);
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    function len(n) { return '0:' + (n < 10 ? '0' : '') + n; }
+    var today = '';
+    try { today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { today = 'Hari ini'; }
+    var earned = 0;
+    s.trx.forEach(function (t) { earned += t.koin; });
+    var shown = earned - s.withdrawnAmt;
+    var extra = earned - 46;
+    var last = s.trx[0];
+    var isRec = s.rec === 'rec';
+    var isReview = s.rec === 'review';
+
+    var ITEMS = ['Iwak segar', 'Iwak asin', 'Iwak bakar', 'Iwak saluang'];
+    var items = ITEMS.map(function (label) {
+      var on = s.item === label;
+      return { label: label, pressed: on ? 'true' : 'false',
+        bg: on ? '#1E3A32' : '#FFFFFF', border: on ? '#1E3A32' : '#C7B796', color: on ? '#F6EAD2' : '#24180F',
+        pick: function () { self.setState({ item: label }); } };
+    });
+
+    var trx = s.trx.map(function (t) {
+      var playingThis = s.playing === t.id;
+      return {
+        time: t.time, item: t.item, buyer: t.buyer, koin: t.koin,
+        hasVoice: !!t.url || t.mine,
+        flash: s.newId === t.id ? 'bp-flash' : '',
+        playBg: playingThis ? '#1E3A32' : '#F2E9DA',
+        playFg: playingThis ? '#F6EAD2' : '#1E3A32',
+        play: function () { self.play(t.id, t.url, t.secs); }
+      };
+    });
+
+    var lastPlaying = s.playing === 'last';
+    return {
+      qrOpen: s.qrOpen,
+      openQr: function () { self.setState({ qrOpen: true }); },
+      closeQr: function () { self.setState({ qrOpen: false }); },
+      today: today,
+      coins: shown,
+      rupiah: (shown * 5000).toLocaleString('id-ID'),
+      trendText: extra > 0 ? '+' + extra + ' koin dari e-akad barusan' : '8 koin lebih banyak dari kemarin',
+
+      isIdle: s.rec === 'idle', isRec: isRec, isReview: isReview, notReview: !isReview,
+      recBorder: isRec ? '#9C2E1C' : (isReview ? '#1E3A32' : '#E2D4BE'),
+      recAria: isRec ? 'Berhenti merekam' : 'Mulai merekam e-akad',
+      recText: isRec ? '● MEREKAM ' + len(Math.min(s.secs, 59)) : 'KETUK UNTUK MEREKAM',
+      recColor: isRec ? '#9C2E1C' : '#4E3D2E',
+      toggleRec: function () { if (self.state.rec === 'rec') self.stopRec(); else self.startRec(); },
+      hasNote: !!s.micNote, micNote: s.micNote,
+
+      draftLabel: s.playing === 'draft' ? 'Sedang memutar…' : 'Dengar rekaman pian',
+      draftBg: s.playing === 'draft' ? '#E3EBE4' : '#FFFFFF',
+      draftLen: len(Math.min(s.draftSecs, 59)) + (s.real ? '' : ' (simulasi)'),
+      playDraft: function () { self.play('draft', self.state.draftUrl, self.state.draftSecs); },
+      items: items,
+      draftKoin: s.draftKoin,
+      decK: function () { self.setState({ draftKoin: Math.max(1, self.state.draftKoin - 1) }); },
+      incK: function () { self.setState({ draftKoin: Math.min(99, self.state.draftKoin + 1) }); },
+      discard: function () { self.setState({ rec: 'idle', secs: 0, draftUrl: null, micNote: '', playing: null }); },
+      saveTrx: function () {
+        var d = new Date();
+        var hh = d.getHours(), mm = d.getMinutes();
+        var time = (hh < 10 ? '0' : '') + hh + '.' + (mm < 10 ? '0' : '') + mm;
+        var id = 'n' + Date.now();
+        var st = self.state;
+        var t = { id: id, time: time, item: st.item + ' · e-akad suara', buyer: 'Wisatawan · terekam ' + len(Math.min(st.draftSecs, 59)), koin: st.draftKoin, url: st.draftUrl, secs: st.draftSecs, mine: true };
+        self.setState({ trx: [t].concat(st.trx), rec: 'idle', secs: 0, draftUrl: null, micNote: '', newId: id, playing: null, withdrawn: false });
+      },
+
+      trx: trx,
+
+      lastPlaying: lastPlaying, notPlaying: !lastPlaying,
+      playPressed: lastPlaying ? 'true' : 'false',
+      playBg: lastPlaying ? '#1E3A32' : '#F2E9DA',
+      playBorder: lastPlaying ? '#1E3A32' : '#C7B796',
+      playDisc: lastPlaying ? '#2B4C42' : '#1E3A32',
+      playTitle: lastPlaying ? '#F6EAD2' : '#24180F',
+      playSub: lastPlaying ? '#CFC2A8' : '#6A5644',
+      playText: lastPlaying ? 'Sedang memutar…' : 'Dengar suara akad terakhir',
+      lastSub: 'E-akad ' + last.buyer.split(' · ')[0] + ' · ' + last.time,
+      playLast: function () { var l = self.state.trx[0]; self.play('last', l.url, l.secs); },
+
+      withdrawn: s.withdrawn, notWithdrawn: !s.withdrawn,
+      wPressed: s.withdrawn ? 'true' : 'false',
+      wBg: s.withdrawn ? '#1E3A32' : '#9C2E1C',
+      wTitle: s.withdrawn ? 'Uang sudah diambil' : 'Ambil uang tunai',
+      wSub: s.withdrawn ? 'Tarima kasih, Acil. Rp ' + (s.withdrawnAmt * 5000).toLocaleString('id-ID') + ' diterima.' : 'Di posko · Rp ' + (shown * 5000).toLocaleString('id-ID'),
+      withdraw: function () {
+        if (self.state.withdrawn) { self.setState({ withdrawn: false, withdrawnAmt: 0 }); return; }
+        var tot = 0; self.state.trx.forEach(function (t) { tot += t.koin; });
+        self.setState({ withdrawn: true, withdrawnAmt: tot });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

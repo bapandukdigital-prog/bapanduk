@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Peta Sungai</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#8A5A12}a:hover{color:#5E3D0B}
+.bp-link{border:none;background:none;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;text-align:inherit}
+@keyframes bp-pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.5);opacity:0}}
+@keyframes bp-blink{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes bp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes bp-bob2{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+@keyframes bp-flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-48}}
+@keyframes bp-flow40{from{stroke-dashoffset:0}to{stroke-dashoffset:-40}}
+@keyframes bp-march{from{stroke-dashoffset:0}to{stroke-dashoffset:-28}}
+@keyframes bp-sheet{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes bp-drift{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+@keyframes bp-target{0%{transform:scale(.8);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+@keyframes bp-spin{to{transform:rotate(360deg)}}
+@keyframes bp-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bp-coin{0%{transform:translateY(30px) scale(.6) rotateY(0);opacity:0}60%{transform:translateY(-6px) scale(1.05) rotateY(540deg);opacity:1}100%{transform:translateY(0) scale(1) rotateY(720deg);opacity:1}}
+@keyframes bp-fly{0%{transform:translateX(0) scale(1);opacity:1}100%{transform:translateX(120px) scale(.5);opacity:0}}
+@keyframes bp-dot{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes bp-bar{from{width:6%}to{width:100%}}
+@keyframes bp-dye{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-14px,8px) scale(1.08)}}
+@keyframes bp-flip{0%{transform:rotateY(90deg);opacity:.2}100%{transform:rotateY(0);opacity:1}}
+@keyframes bp-pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.1);opacity:1}100%{transform:scale(1)}}
+@keyframes bp-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+@keyframes bp-wave{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+@keyframes bp-stamp{0%{transform:scale(1.6) rotate(-14deg);opacity:0}70%{transform:scale(.94) rotate(-8deg);opacity:1}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+@keyframes bp-scan{0%{top:6%}50%{top:90%}100%{top:6%}}
+.bp-pulse{animation:bp-pulse 1.8s ease-out infinite}
+.bp-blink{animation:bp-blink 1.5s ease-in-out infinite}
+.bp-bob{animation:bp-bob 2.6s ease-in-out infinite}
+.bp-bob2{animation:bp-bob2 2.8s ease-in-out infinite}
+.bp-flow{animation:bp-flow 2.4s linear infinite}
+.bp-flow2{animation:bp-flow 3.6s linear infinite}
+.bp-flow3{animation:bp-flow40 2.6s linear infinite}
+.bp-march{animation:bp-march .8s linear infinite}
+.bp-sheet{animation:bp-sheet .38s cubic-bezier(.2,.8,.2,1) both}
+.bp-drift{animation:bp-drift 7s ease-in-out infinite}
+.bp-target{animation:bp-target 1.3s ease-out infinite}
+.bp-spin{animation:bp-spin 1.1s linear infinite}
+.bp-rise{animation:bp-rise .38s ease-out both}
+.bp-coin{animation:bp-coin 1s cubic-bezier(.2,.8,.2,1) both}
+.bp-fly{animation:bp-fly 1.2s ease-in infinite}
+.bp-dot{animation:bp-dot 1.2s ease-in-out infinite}
+.bp-bar{animation:bp-bar 2.4s ease-in-out both}
+.bp-dye{animation:bp-dye 9s ease-in-out infinite}
+.bp-flip{animation:bp-flip .35s ease-out both}
+.bp-pop{animation:bp-pop .42s cubic-bezier(.2,.8,.3,1.2) both}
+.bp-ring{animation:bp-ring 1.4s ease-out infinite}
+.bp-ring2{animation:bp-ring 1.4s ease-out .5s infinite}
+.bp-wave span{display:block;width:4px;border-radius:2px;background:#9C2E1C;transform-origin:center;animation:bp-wave .9s ease-in-out infinite}
+.bp-stamp{animation:bp-stamp .55s cubic-bezier(.2,.9,.3,1.2) both}
+.bp-scan{animation:bp-scan 2.4s ease-in-out infinite}
+.bp-scroll::-webkit-scrollbar{display:none}
+.bp-scroll{scrollbar-width:none}
+.bp-scroll > *{flex-shrink:0}
+.bp-num{font-variant-numeric:tabular-nums}
+input[type=range]{accent-color:#1E3A32}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #F2E9DA; color: #24180F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+  <dc-import name="AppWisatawan" start="peta" hint-size="390px,844px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

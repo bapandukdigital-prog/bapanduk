@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E3A32">
+<meta name="description" content="Prototipe interaktif Bapanduk: tradisi tukar-menukar di Pasar Terapung Muara Kuin, Banjarmasin, kini digital.">
+<title>Bapanduk · Pasar Terapung Muara Kuin</title>
+<link rel="icon" type="image/png" href="assets/logo-bapanduk.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --hijau: #1E3A32; --krem: #F6EAD2; --kunyit: #D8962A; --tinta: #24180F; --latar: #12241F; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh; min-height: 100dvh; background: var(--latar); color: var(--krem);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .band { position: fixed; left: 0; right: 0; height: 8px; z-index: 2; background: linear-gradient(90deg, #D8962A, #C4572A 30%, #9C2E1C 55%, #6B2A55 80%, #3E6B4F); }
+  .band.top { top: 0; }
+  .band.bottom { bottom: 0; }
+  .wrap { display: flex; align-items: center; justify-content: center; gap: 56px; padding: 28px 24px; box-sizing: border-box; width: 100%; }
+
+  /* panel mode */
+  .panel { width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 18px; }
+  .panel * { box-sizing: border-box; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 76px; height: 76px; object-fit: contain; background: #FFCF6E; border-radius: 20px; padding: 8px; }
+  .brand h1 { margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.05; }
+  .brand p { margin: 4px 0 0; font-size: 13px; color: #CFC2A8; }
+  .intro { margin: 0; font-size: 14px; line-height: 1.55; color: #CFC2A8; }
+  .label { margin: 4px 0 -6px; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--kunyit); }
+  .modes { display: flex; flex-direction: column; gap: 10px; }
+  .mode { position: relative; display: flex; gap: 14px; align-items: flex-start; padding: 16px; border-radius: 18px; border: 1.5px solid #2B4C42; background: #17302A; color: var(--krem); text-decoration: none; transition: background .2s, border-color .2s, transform .15s; }
+  .mode:hover { border-color: #4E6A60; transform: translateY(-1px); }
+  .mode .ico { width: 46px; height: 46px; flex-shrink: 0; border-radius: 14px; background: #24433A; display: flex; align-items: center; justify-content: center; }
+  .mode strong { display: block; font-size: 16px; font-weight: 800; }
+  .mode span.desc { display: block; margin-top: 3px; font-size: 13px; line-height: 1.45; color: #CFC2A8; }
+  .mode .badge { position: absolute; top: 14px; right: 14px; display: none; padding: 3px 9px; border-radius: 99px; background: var(--tinta); color: var(--kunyit); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+  .mode[aria-current="true"] { background: linear-gradient(120deg, #D8962A, #C4572A); border-color: transparent; color: var(--tinta); }
+  .mode[aria-current="true"] .ico { background: rgba(36, 24, 15, .14); }
+  .mode[aria-current="true"] span.desc { color: #3B2210; }
+  .mode[aria-current="true"] .badge { display: block; }
+  .mode[aria-current="true"] svg { stroke: var(--tinta); }
+  .reset { align-self: flex-start; min-height: 40px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #2B4C42; background: transparent; color: var(--krem); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .reset:hover { border-color: #4E6A60; }
+  .tip { margin: 0; font-size: 12px; line-height: 1.5; color: #8FA39A; }
+
+  /* ponsel */
+  #stage { position: relative; flex-shrink: 0; border-radius: 48px; box-shadow: 0 0 0 9px #0B1613, 0 0 0 11px #2B4C42, 0 36px 80px rgba(0, 0, 0, .55); overflow: hidden; background: #F2E9DA; }
+  #frame { position: absolute; left: 0; top: 0; width: 390px; height: 844px; transform-origin: 0 0; overflow: hidden; }
+  #frame [style*="height: 844px"] { height: var(--app-h, 844px) !important; }
+
+  @media (max-width: 860px) { .panel { display: none; } .wrap { padding: 20px 12px; } }
+  body.hp { display: block; background: #F2E9DA; }
+  body.hp .wrap { display: block; padding: 0; }
+  body.hp .band, body.hp .panel { display: none; }
+  body.hp #stage { border-radius: 0; box-shadow: none; }
+</style>
+</head>
+<body>
+  <div class="band top" aria-hidden="true"></div>
+  <div class="wrap">
+    <aside class="panel">
+      <div class="brand">
+        <img src="assets/logo-bapanduk.png" alt="Logo Bapanduk">
+        <div>
+          <h1>Bapanduk</h1>
+          <p>Pasar Terapung Muara Kuin</p>
+        </div>
+      </div>
+      <p class="intro">Prototipe aplikasi bapanduk (tukar-menukar) di pasar terapung Banjarmasin. Pilih mode, lalu coba alurnya di layar ponsel.</p>
+      <p class="label">Pilih mode</p>
+      <nav class="modes" aria-label="Pilih mode aplikasi">
+        <a class="mode" href="#/Awal" data-mode="wisatawan">
+          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6EAD2" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"/></svg></span>
+          <span><strong>Mode Wisatawan</strong><span class="desc">Jelajah pasar, pindai QR jukung, bapanduk dengan koin, dan belajar kata Banjar.</span></span>
+          <span class="badge">AKTIF</span>
+        </a>
+        <a class="mode" href="#/Pedagang" data-mode="pedagang">
+          <span class="ico"><svg width="26" height="20" viewBox="0 0 44 26" fill="none" stroke="#F6EAD2" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M2 18 L22 4 L42 18 Q22 25 2 18 Z"/><path d="M22 4 V19"/></svg></span>
+          <span><strong>Mode Pedagang</strong><span class="desc">Untuk acil di jukung: QR jukung, rekam e-akad, dan pendapatan harian.</span></span>
+          <span class="badge">AKTIF</span>
+        </a>
+      </nav>
+      <button class="reset" type="button" data-reset>Ulangi demo dari awal</button>
+      <p class="tip">Di HP, halaman ini tampil layar penuh seperti aplikasi.</p>
+    </aside>
+    <div id="stage"><div id="frame"></div></div>
+  </div>
+  <div class="band bottom" aria-hidden="true"></div>
+  <noscript>Aktifkan JavaScript untuk membuka prototipe Bapanduk.</noscript>
+  <script src="assets/screens.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

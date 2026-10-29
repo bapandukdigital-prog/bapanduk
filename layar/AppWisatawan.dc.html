@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Aplikasi Wisatawan</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #F2E9DA; color: #24180F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; display: {{dBeranda}}">
+    <dc-import name="LayarBeranda" balance="{{balance}}" go="{{go}}" hint-size="390px,844px"></dc-import>
+  </div>
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; display: {{dPindai}}">
+    <dc-import name="LayarPindai" go="{{go}}" active="{{onPindai}}" hint-size="390px,844px"></dc-import>
+  </div>
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; display: {{dPeta}}">
+    <dc-import name="LayarPeta" go="{{go}}" hint-size="390px,844px"></dc-import>
+  </div>
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; display: {{dKoin}}">
+    <dc-import name="LayarKoin" balance="{{balance}}" history="{{history}}" on-coins="{{onCoins}}" go="{{go}}" active="{{onKoin}}" hint-size="390px,844px"></dc-import>
+  </div>
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; display: {{dProfil}}">
+    <dc-import name="LayarProfil" balance="{{balance}}" bp-count="{{bpCount}}" go="{{go}}" hint-size="390px,844px"></dc-import>
+  </div>
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 844px; display: {{dBapanduk}}">
+    <dc-import name="LayarBapanduk" balance="{{balance}}" on-barter="{{onBarter}}" go="{{go}}" active="{{onBapanduk}}" hint-size="390px,844px"></dc-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"start":{"editor":"enum","options":["beranda","pindai","peta","koin","profil","bapanduk"],"default":"beranda"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var ok = ['beranda', 'pindai', 'peta', 'koin', 'profil', 'bapanduk'];
+    var start = ok.indexOf(props && props.start) >= 0 ? props.start : 'beranda';
+    this.state = {
+      screen: start,
+      balance: 128,
+      bpCount: 7,
+      history: [
+        { t: 'Hari ini, 05.12 WITA', d: 'Bapanduk · Acil Khadijah', a: -3 },
+        { t: 'Kemarin, 19.40 WITA', d: 'Isi koin · Bank Kalsel', a: 50 },
+        { t: 'Kemarin, 05.55 WITA', d: 'Bapanduk · Acil Maimunah', a: -4 }
+      ]
+    };
+    var self = this;
+    this.go = function (x) { if (ok.indexOf(x) >= 0) self.setState({ screen: x }); };
+    this.onCoins = function (delta, label) {
+      var n = Number(delta) || 0;
+      self.setState(function (s) {
+        return {
+          balance: Math.max(0, s.balance + n),
+          history: [{ t: 'Baru saja · ' + self.nowWita() + ' WITA', d: label || (n > 0 ? 'Isi koin' : 'Tukar ke saldo'), a: n }].concat(s.history)
+        };
+      });
+    };
+    this.onBarter = function (coins, acil) {
+      var c = Math.max(0, Number(coins) || 0);
+      self.setState(function (s) {
+        var add = { t: 'Baru saja · ' + self.nowWita() + ' WITA', d: 'Bapanduk · ' + (acil || 'acil'), a: -c };
+        return {
+          balance: Math.max(0, s.balance - c),
+          bpCount: s.bpCount + 1,
+          history: c > 0 ? [add].concat(s.history) : s.history
+        };
+      });
+    };
+  }
+  nowWita() {
+    try {
+      return new Intl.DateTimeFormat('id-ID', { timeZone: 'Asia/Makassar', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).replace(':', '.');
+    } catch (e) { return ''; }
+  }
+  renderVals() {
+    var s = this.state;
+    function d(x) { return s.screen === x ? 'block' : 'none'; }
+    return {
+      balance: s.balance,
+      bpCount: s.bpCount,
+      history: s.history,
+      go: this.go,
+      onCoins: this.onCoins,
+      onBarter: this.onBarter,
+      dBeranda: d('beranda'), dPindai: d('pindai'), dPeta: d('peta'),
+      dKoin: d('koin'), dProfil: d('profil'), dBapanduk: d('bapanduk'),
+      onPindai: s.screen === 'pindai',
+      onKoin: s.screen === 'koin',
+      onBapanduk: s.screen === 'bapanduk'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Beranda</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; background: #F2E9DA; color: #24180F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+  <header style="position: relative; background: #1E3A32; padding: 54px 20px 18px; flex-shrink: 0; overflow: hidden">
+    <svg width="132" height="96" viewBox="0 0 120 92" aria-hidden="true" style="position: absolute; right: -8px; top: 30px; opacity: 0.22">
+      <path d="M4 64 L40 46 L60 6 L80 46 L116 64 M14 59 L14 84 L106 84 L106 59 M40 46 L40 84 M80 46 L80 84 M54 0 L66 14 M66 0 L54 14 M20 84 L20 92 M44 84 L44 92 M76 84 L76 92 M100 84 L100 92 M54 84 L54 66 L66 66 L66 84" fill="none" stroke="#D8962A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+    </svg>
+    <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <p style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #CFC2A8">Pasar Terapung Muara Kuin</p>
+        <h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 38px; line-height: 1.05; color: #F6EAD2">Bapanduk</h1>
+        <p style="margin: 4px 0 0; font-size: 13px; color: #E4D8C0">Salamat datang, dangsanak.</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding-top: 4px">
+        <button type="button" class="bp-link" onClick="{{goKoin}}" aria-label="Saldo {{balance}} koin, buka dompet koin" style="height: 36px; display: flex; align-items: center; gap: 6px; padding: 0 12px 0 8px; border-radius: 18px; background: #D8962A; color: #24180F; font-size: 15px; font-weight: 800; text-decoration: none">
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="#F6EAD2" stroke="#24180F" stroke-width="1.4"></circle><path d="M10 5 L14 10 L10 15 L6 10 Z" fill="none" stroke="#9C2E1C" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+          <span class="bp-num">{{balance}}</span>
+        </button>
+        <button type="button" class="bp-link" onClick="{{goProfil}}" aria-label="Profil" style="width: 44px; height: 44px; box-sizing: border-box; border-radius: 22px; border: 1.5px solid #4E6A60; background: #2B4C42; display: flex; align-items: center; justify-content: center; text-decoration: none">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#F6EAD2" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; gap: 16px; margin-top: 14px; font-size: 12px; font-weight: 500; color: #E4D8C0">
+      <span style="display: flex; align-items: center; gap: 5px">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#D8962A" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"></path></svg>
+        32°C cerah
+      </span>
+      <span style="display: flex; align-items: center; gap: 5px">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#D8962A" stroke-width="2" stroke-linecap="round"><path d="M2 9c3-2 5-2 8 0s5 2 8 0 3-1.5 4-1.5M2 15c3-2 5-2 8 0s5 2 8 0 3-1.5 4-1.5"></path></svg>
+        Sungai Barito
+      </span>
+      <span style="display: flex; align-items: center; gap: 5px">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#D8962A" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        05.45 WITA
+      </span>
+    </div>
+  </header>
+
+  <svg width="390" height="12" viewBox="0 0 390 12" aria-hidden="true" style="display: block; flex-shrink: 0; background: #1E3A32">
+    <defs>
+      <linearGradient id="sasiranganA" x1="0" y1="0" x2="390" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#D8962A"></stop>
+        <stop offset="0.3" stop-color="#C4572A"></stop>
+        <stop offset="0.55" stop-color="#9C2E1C"></stop>
+        <stop offset="0.8" stop-color="#6B2A55"></stop>
+        <stop offset="1" stop-color="#3E6B4F"></stop>
+      </linearGradient>
+      <pattern id="gigiHaruanA" width="16" height="12" patternUnits="userSpaceOnUse">
+        <path d="M0 0 L8 0 L0 12 Z M8 0 L16 0 L16 12 Z" fill="#1E3A32"></path>
+        <path d="M4.5 12 L8 6.5 L11.5 12 Z" fill="#24180F" fill-opacity="0.35"></path>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="390" height="12" fill="url(#sasiranganA)"></rect>
+    <rect x="0" y="0" width="390" height="12" fill="url(#gigiHaruanA)"></rect>
+  </svg>
+
+  <main class="bp-scroll" style="flex: 1; overflow-y: auto; padding: 18px 16px 150px; display: flex; flex-direction: column; gap: 16px">
+
+    <section aria-labelledby="misiJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; padding: 18px">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+        <div>
+          <p style="margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Catatan perjalanan</p>
+          <h2 id="misiJudul" style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 21px; line-height: 1.2; color: #24180F">Jelajah pasar pagi</h2>
+        </div>
+        <p style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-size: 30px; line-height: 1; color: #1E3A32">{{pct}}<span style="font-size: 16px">%</span></p>
+      </div>
+
+      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{pct}}" aria-label="Kemajuan misi" style="margin-top: 14px; height: 10px; border-radius: 5px; background: #EADFCB; overflow: hidden">
+        <div style="width: {{pct}}%; height: 100%; border-radius: 5px; background: linear-gradient(90deg, #D8962A, #C4572A 35%, #9C2E1C 65%, #6B2A55); transition: width 0.5s ease"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2px; font-size: 11px; font-weight: 600; color: #6A5644">
+        <span>{{earned}} dari 100 XP · ketuk misi untuk menandai</span>
+        <button onClick="{{reroll}}" aria-label="Acak misi baru" style="min-height: 40px; display: flex; align-items: center; gap: 5px; margin-right: -6px; padding: 0 6px; border: none; background: transparent; font-family: inherit; font-size: 12px; font-weight: 800; color: #8A5A12; cursor: pointer">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8A5A12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h3.5c2.5 0 3.8 1.3 5.5 6s3 6 5.5 6H21M18 15l3 3-3 3M3 18h3.5c1.4 0 2.4-.4 3.2-1.3M14.3 7.3c.8-.9 1.8-1.3 3.2-1.3H21M18 3l3 3-3 3"></path></svg>
+          Acak misi
+        </button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px">
+        <sc-for list="{{missions}}" as="m" hint-placeholder-count="4">
+          <button onClick="{{m.toggle}}" aria-pressed="{{m.pressed}}" style="min-height: 48px; display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; border: 1px solid {{m.border}}; background: {{m.bg}}; text-align: left; font-family: inherit; cursor: pointer">
+            <sc-if value="{{m.isDone}}" hint-placeholder-val="{{ false }}">
+              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex-shrink: 0"><path d="M11 1 L21 11 L11 21 L1 11 Z" fill="#1E3A32"></path><path d="M7 11.2 L9.8 14 L15 8.6" fill="none" stroke="#F6EAD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </sc-if>
+            <sc-if value="{{m.notDone}}" hint-placeholder-val="{{ true }}">
+              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" style="flex-shrink: 0"><path d="M11 2 L20 11 L11 20 L2 11 Z" fill="none" stroke="{{m.iconStroke}}" stroke-width="1.8"></path><circle cx="11" cy="11" r="2.2" fill="{{m.iconStroke}}"></circle></svg>
+            </sc-if>
+            <span style="flex: 1; display: flex; flex-direction: column; gap: 1px">
+              <span style="font-size: 13px; font-weight: {{m.weight}}; color: {{m.color}}; text-decoration: {{m.deco}}">{{m.label}}</span>
+              <sc-if value="{{m.isNext}}" hint-placeholder-val="{{ false }}">
+                <span style="font-size: 11px; font-weight: 700; color: #8A5A12">Misi berikutnya</span>
+              </sc-if>
+            </span>
+            <span style="font-size: 11px; font-weight: 800; color: {{m.xpColor}}; white-space: nowrap">+{{m.xp}} XP</span>
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{allDone}}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 12px; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #1E3A32; color: #F6EAD2">
+          <span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; border: 2px dashed #D8962A; display: flex; align-items: center; justify-content: center; font-family: 'Young Serif', Georgia, serif; font-size: 13px; color: #D8962A; transform: rotate(-8deg)">100</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 14px; font-weight: 800">Misi pagi tuntas!</span>
+            <span style="font-size: 12px; color: #CFC2A8">Lencana Penjelajah Muara Kuin terbuka. Acak misi untuk tantangan baru.</span>
+          </span>
+        </div>
+      </sc-if>
+    </section>
+
+    <section aria-labelledby="petaJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; padding: 18px 16px 16px">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+        <div>
+          <p style="margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Peta sungai</p>
+          <h2 id="petaJudul" style="margin: 4px 0 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 21px; line-height: 1.2; color: #24180F">Jukung di sekitar pian</h2>
+        </div>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #1E3A32">
+          <span class="bp-blink" style="width: 8px; height: 8px; border-radius: 4px; background: #9C2E1C"></span>
+          LANGSUNG
+        </span>
+      </div>
+
+      <div style="position: relative; width: 326px; height: 232px; margin-top: 14px; border-radius: 14px; overflow: hidden; background: #E9DEC8">
+        <svg width="326" height="232" viewBox="0 0 326 232" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+          <path d="M-10 66 C 76 38, 134 114, 190 104 S 304 58, 340 142" fill="none" stroke="#C7B796" stroke-width="84" stroke-linecap="round"></path>
+          <path d="M-10 66 C 76 38, 134 114, 190 104 S 304 58, 340 142" fill="none" stroke="#A9BFAE" stroke-width="72" stroke-linecap="round"></path>
+          <path d="M-10 60 C 76 32, 134 108, 190 98 S 304 52, 340 136" fill="none" stroke="#C6D5C8" stroke-width="1.5" stroke-dasharray="10 14"></path>
+          <path d="M-10 74 C 76 46, 134 122, 190 112 S 304 66, 340 150" fill="none" stroke="#C6D5C8" stroke-width="1.5" stroke-dasharray="6 18"></path>
+          <g fill="none" stroke="#7C6A50" stroke-width="1.4" stroke-linejoin="round">
+            <path d="M138 30 L148 14 L158 30 M140 30 L140 40 L156 40 L156 30"></path>
+            <path d="M232 24 L242 8 L252 24 M234 24 L234 34 L250 34 L250 24"></path>
+            <path d="M40 164 L50 148 L60 164 M42 164 L42 174 L58 174 L58 164"></path>
+            <path d="M206 186 L216 170 L226 186 M208 186 L208 196 L224 196 L224 186"></path>
+          </g>
+          <g fill="none" stroke="#6F8B62" stroke-width="1.4" stroke-linecap="round">
+            <path d="M92 26 q-6 -8 -12 -6 M92 26 q4 -10 12 -10 M92 26 v10"></path>
+            <path d="M190 30 q-6 -8 -12 -6 M190 30 q4 -10 12 -10 M190 30 v10"></path>
+            <path d="M118 178 q-6 -8 -12 -6 M118 178 q4 -10 12 -10 M118 178 v10"></path>
+            <path d="M286 196 q-6 -8 -12 -6 M286 196 q4 -10 12 -10 M286 196 v10"></path>
+          </g>
+          <g fill="#6A5644" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" letter-spacing="1">
+            <text x="12" y="218">MUARA KUIN · SUNGAI BARITO</text>
+          </g>
+          <g transform="translate(298 18)" fill="none" stroke="#6A5644" stroke-width="1.3">
+            <circle cx="0" cy="0" r="10"></circle>
+            <path d="M0 -7 L3 0 L0 7 L-3 0 Z" fill="#6A5644"></path>
+          </g>
+        </svg>
+
+        <div style="position: absolute; left: 152px; top: 91px; width: 24px; height: 24px; pointer-events: none">
+          <span class="bp-pulse" style="position: absolute; inset: 4px; border-radius: 8px; background: #9C2E1C"></span>
+          <span style="position: absolute; inset: 6px; border-radius: 6px; background: #9C2E1C; border: 2px solid #FBF7F0"></span>
+          <span style="position: absolute; top: 26px; left: -8px; width: 40px; text-align: center; font-size: 10px; font-weight: 800; color: #9C2E1C">Pian</span>
+        </div>
+
+        <sc-for list="{{boats}}" as="b" hint-placeholder-count="4">
+          <button onClick="{{b.pick}}" aria-label="{{b.aria}}" aria-pressed="{{b.pressed}}" style="position: absolute; left: {{b.left}}px; top: {{b.top}}px; width: 48px; height: 48px; padding: 0; border: none; border-radius: 24px; background: {{b.ring}}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s">
+            <svg class="bp-bob" width="34" height="24" viewBox="0 0 34 24" aria-hidden="true">
+              <path d="M10 10 L17 4 L24 10 Z" fill="{{b.hat}}"></path>
+              <path d="M2 13 Q17 26 32 13 Z" fill="{{b.hull}}"></path>
+            </svg>
+            <span style="position: absolute; top: 42px; left: -10px; width: 68px; text-align: center; font-size: 10px; font-weight: 700; color: #24180F">{{b.short}}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{hasSel}}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: #F2E9DA; display: flex; align-items: center; gap: 12px">
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+            <p style="margin: 0; font-size: 14px; font-weight: 800; color: #24180F">{{sel.name}}</p>
+            <p style="margin: 0; font-size: 12px; color: #6A5644">{{sel.goods}} · {{sel.dist}}</p>
+            <p style="margin: 2px 0 0; font-size: 11px; font-weight: 700; color: {{sel.statusColor}}">{{sel.status}}</p>
+          </div>
+          <sc-if value="{{sel.canBarter}}" hint-placeholder-val="{{ true }}">
+            <button type="button" class="bp-link" onClick="{{goBapanduk}}" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 12px; background: #1E3A32; color: #F6EAD2; font-size: 12px; font-weight: 800; text-decoration: none; white-space: nowrap">Bapanduk</button>
+          </sc-if>
+        </div>
+      </sc-if>
+      <sc-if value="{{noSel}}" hint-placeholder-val="{{ true }}">
+        <p style="margin: 12px 0 0; font-size: 12px; color: #6A5644">Ketuk jukung untuk melihat dagangan acil.</p>
+      </sc-if>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; font-size: 11px; font-weight: 600; color: #6A5644">
+        <span style="display: flex; align-items: center; gap: 5px"><span style="width: 12px; height: 6px; border-radius: 0 0 6px 6px; background: #1E3A32"></span>Acil berjualan</span>
+        <span style="display: flex; align-items: center; gap: 5px"><span style="width: 12px; height: 6px; border-radius: 0 0 6px 6px; background: #A99B85"></span>Sudah bulik</span>
+        <span style="display: flex; align-items: center; gap: 5px"><span style="width: 12px; height: 6px; border-radius: 0 0 6px 6px; background: #D8962A"></span>Klotok wisata</span>
+        <span style="display: flex; align-items: center; gap: 5px"><span style="width: 8px; height: 8px; border-radius: 3px; background: #9C2E1C"></span>Posisi pian</span>
+      </div>
+      <button type="button" class="bp-link" onClick="{{goPeta}}" style="margin-top: 14px; min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; border: 1.5px solid #1E3A32; font-size: 13px; font-weight: 800; color: #1E3A32; text-decoration: none">
+        Buka peta lengkap
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </button>
+    </section>
+  </main>
+
+  <button type="button" class="bp-link" onClick="{{goPindai}}" style="position: absolute; left: 50%; bottom: 88px; transform: translateX(-50%); height: 54px; display: flex; align-items: center; gap: 10px; padding: 0 24px 0 18px; border-radius: 27px; background: linear-gradient(110deg, #B5401E 0%, #9C2E1C 45%, #6B2A55 100%); color: #F6EAD2; font-size: 14px; font-weight: 800; letter-spacing: 0.04em; text-decoration: none; white-space: nowrap; box-shadow: 0 10px 24px rgba(36, 24, 15, 0.28); z-index: 5">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#F6EAD2" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V4h4M17 4h4v4M21 16v4h-4M7 20H3v-4"></path><rect x="7.5" y="7.5" width="3.5" height="3.5"></rect><rect x="13" y="7.5" width="3.5" height="3.5"></rect><rect x="7.5" y="13" width="3.5" height="3.5"></rect><path d="M13 13h3.5v3.5"></path></svg>
+    Pindai QR Jukung
+  </button>
+
+  <nav aria-label="Navigasi utama" style="position: absolute; left: 0; right: 0; bottom: 0; height: 74px; padding-bottom: 10px; box-sizing: border-box; display: flex; background: #FBF7F0; border-top: 1px solid #E2D4BE; z-index: 4">
+    <button aria-current="page" style="flex: 1; border: none; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-family: inherit; font-size: 11px; font-weight: 800; color: #1E3A32; cursor: pointer">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"><path d="M2 14 L8 11 L12 3 L16 11 L22 14 M5 13 V21 H19 V13 M10 21 V16 H14 V21"></path></svg>
+      Beranda
+      <span style="width: 6px; height: 6px; transform: rotate(45deg); background: #D8962A"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goPeta}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6 L9 4 L15 6 L21 4 V18 L15 20 L9 18 L3 20 Z M9 4 V18 M15 6 V20"></path></svg>
+      Peta
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goKoin}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L16 12 L12 17 L8 12 Z"></path></svg>
+      Koin
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goProfil}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg>
+      Profil
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"balance":{"editor":null,"tsType":"number"},"go":{"editor":null},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { quests: this.pickQuests(null), done: {}, sel: null };
+  }
+  pickQuests(prev) {
+    var POOL = [
+      { id: 'q1', label: 'Singgah ke jukung Acil Khadijah', d: 1 },
+      { id: 'q2', label: 'Bapanduk 2 hasil bumi lokal', d: 3 },
+      { id: 'q3', label: 'Pindai QR 3 jukung pedagang', d: 2 },
+      { id: 'q4', label: 'Dengarkan kisah Sungai Barito', d: 1 },
+      { id: 'q5', label: 'Cicipi wadai Banjar dari jukung', d: 1 },
+      { id: 'q6', label: 'Sarapan soto Banjar di warung terapung', d: 2 },
+      { id: 'q7', label: 'Berfoto dengan acil bertanggui', d: 1 },
+      { id: 'q8', label: 'Singgah ke Masjid Sultan Suriansyah', d: 3 },
+      { id: 'q9', label: 'Pelajari 3 kata bahasa Banjar', d: 2 },
+      { id: 'q10', label: 'Isi koin Bapanduk pertama pian', d: 1 },
+      { id: 'q11', label: 'Rekam e-akad saat bapanduk', d: 2 },
+      { id: 'q12', label: 'Naik klotok menyusuri Sungai Kuin', d: 3 },
+      { id: 'q13', label: 'Beli tanggui buatan pengrajin lokal', d: 2 },
+      { id: 'q14', label: 'Kumpulkan cap dari 4 jukung berbeda', d: 3 },
+      { id: 'q15', label: 'Datang sebelum pukul 05.30 WITA', d: 2 },
+      { id: 'q16', label: 'Tawar harga pakai bahasa Banjar', d: 2 }
+    ];
+    var prevIds = prev ? prev.map(function (q) { return q.id; }) : [];
+    var pick = [];
+    for (var tries = 0; tries < 20; tries++) {
+      var arr = POOL.slice();
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+      pick = arr.slice(0, 4);
+      var same = pick.filter(function (q) { return prevIds.indexOf(q.id) >= 0; }).length;
+      if (same <= 1) break;
+    }
+    pick.sort(function (a, b) { return a.d - b.d; });
+    var XP = [15, 20, 30, 35];
+    return pick.map(function (q, k) { return { id: q.id, label: q.label, xp: XP[k] }; });
+  }
+  renderVals() {
+    var self = this;
+    var done = this.state.done;
+    var list = this.state.quests;
+    var earned = 0;
+    var nextId = null;
+    list.forEach(function (m) {
+      if (done[m.id]) earned += m.xp;
+      else if (nextId === null) nextId = m.id;
+    });
+    var missions = list.map(function (m) {
+      var d = !!done[m.id];
+      var next = m.id === nextId;
+      return {
+        label: m.label,
+        xp: m.xp,
+        isDone: d,
+        notDone: !d,
+        isNext: next,
+        pressed: d ? 'true' : 'false',
+        bg: next ? '#F6E7C8' : (d ? '#F2E9DA' : 'transparent'),
+        border: next ? '#DDB26A' : (d ? '#F2E9DA' : '#E2D4BE'),
+        color: d ? '#6A5644' : '#24180F',
+        weight: next ? '800' : '600',
+        deco: d ? 'line-through' : 'none',
+        xpColor: d ? '#1E3A32' : '#8A5A12',
+        iconStroke: next ? '#8A5A12' : '#A99B85',
+        toggle: function () {
+          var nd = Object.assign({}, self.state.done);
+          nd[m.id] = !nd[m.id];
+          self.setState({ done: nd });
+        }
+      };
+    });
+
+    var boatData = [
+      { id: 'b1', name: 'Jukung Acil Khadijah', short: 'Khadijah', x: 101, y: 78, kind: 'seller', on: true, goods: 'Iwak asin, iwak segar', dist: '± 40 m' },
+      { id: 'b2', name: 'Jukung Acil Maimunah', short: 'Maimunah', x: 50, y: 62, kind: 'seller', on: true, goods: 'Wadai Banjar, pisang', dist: '± 110 m' },
+      { id: 'b3', name: 'Jukung Acil Aminah', short: 'Aminah', x: 278, y: 90, kind: 'seller', on: false, goods: 'Sayur, jeruk siam', dist: '± 120 m' },
+      { id: 'b4', name: 'Klotok Wisata', short: 'Klotok', x: 222, y: 98, kind: 'tourist', on: true, goods: 'Perahu wisatawan lain', dist: '± 60 m' }
+    ];
+    var selId = this.state.sel;
+    var boats = boatData.map(function (b) {
+      var picked = selId === b.id;
+      var hull = b.kind === 'tourist' ? '#D8962A' : (b.on ? '#1E3A32' : '#A99B85');
+      return {
+        short: b.short,
+        aria: b.name + (b.on ? '' : ', sudah bulik'),
+        pressed: picked ? 'true' : 'false',
+        left: b.x - 24,
+        top: b.y - 24,
+        hull: hull,
+        hat: b.kind === 'tourist' ? '#FBF7F0' : (b.on ? '#D8962A' : '#CFC2A8'),
+        ring: picked ? 'rgba(251, 247, 240, 0.9)' : 'transparent',
+        pick: function () { self.setState({ sel: picked ? null : b.id }); }
+      };
+    });
+    var s = null;
+    boatData.forEach(function (b) { if (b.id === selId) s = b; });
+    var sel = s ? {
+      name: s.name,
+      goods: s.goods,
+      dist: s.dist,
+      status: s.kind === 'tourist' ? 'Sesama wisatawan' : (s.on ? 'Sedang berjualan' : 'Sudah bulik, kembali besok subuh'),
+      statusColor: s.on ? '#1E3A32' : '#6A5644',
+      canBarter: s.kind === 'seller' && s.on
+    } : { name: '', goods: '', dist: '', status: '', statusColor: '#6A5644', canBarter: false };
+
+    var go = this.props.go;
+    function nav(x) { return function () { if (typeof go === 'function') go(x); }; }
+    return {
+      balance: typeof this.props.balance === 'number' ? this.props.balance : 128,
+      goBeranda: nav('beranda'), goPeta: nav('peta'), goKoin: nav('koin'),
+      goProfil: nav('profil'), goBapanduk: nav('bapanduk'), goPindai: nav('pindai'),
+      pct: earned,
+      earned: earned,
+      allDone: earned >= 100,
+      reroll: function () { self.setState({ quests: self.pickQuests(self.state.quests), done: {} }); },
+      missions: missions,
+      boats: boats,
+      hasSel: !!s,
+      noSel: !s,
+      sel: sel
+    };
+  }
+}
+</script>
+</body>
+</html>

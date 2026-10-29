@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Profil Wisatawan</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; background: #F2E9DA; color: #24180F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+  <header style="position: relative; background: #1E3A32; padding: 54px 20px 18px; flex-shrink: 0; overflow: hidden">
+    <svg width="132" height="96" viewBox="0 0 120 92" aria-hidden="true" style="position: absolute; right: -10px; top: 34px; opacity: 0.18">
+      <path d="M4 64 L40 46 L60 6 L80 46 L116 64 M14 59 L14 84 L106 84 L106 59 M40 46 L40 84 M80 46 L80 84 M54 0 L66 14 M66 0 L54 14 M20 84 L20 92 M44 84 L44 92 M76 84 L76 92 M100 84 L100 92 M54 84 L54 66 L66 66 L66 84" fill="none" stroke="#D8962A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+    </svg>
+    <div style="position: relative; display: flex; align-items: center; gap: 14px">
+      <div style="width: 70px; height: 70px; flex-shrink: 0; box-sizing: border-box; padding: 3px; border-radius: 35px; background: conic-gradient(from 200deg, #D8962A, #C4572A, #9C2E1C, #6B2A55, #3E6B4F, #D8962A)">
+        <div style="width: 100%; height: 100%; box-sizing: border-box; border-radius: 32px; border: 2px solid #1E3A32; background: #F6E7C8; display: flex; align-items: center; justify-content: center; font-family: 'Young Serif', Georgia, serif; font-size: 24px; color: #24180F">AZ</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 3px">
+        <p style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #CFC2A8">Profil wisatawan</p>
+        <h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.1; color: #F6EAD2">Assyifa Al Zahra</h1>
+        <p style="margin: 0; font-size: 12px; color: #E4D8C0">Bergabung Oktober 2026</p>
+      </div>
+    </div>
+    <div style="position: relative; margin-top: 16px; padding: 10px 12px; border-radius: 12px; background: #2B4C42">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; font-weight: 700">
+        <span style="color: #F6EAD2">Urang Pasar · Level 3</span>
+        <span class="bp-num" style="color: #D8962A">{{xp}} / 500 XP</span>
+      </div>
+      <div role="progressbar" aria-valuemin="0" aria-valuemax="500" aria-valuenow="{{xp}}" aria-label="XP menuju level 4" style="margin-top: 6px; height: 6px; border-radius: 3px; background: #1E3A32; overflow: hidden">
+        <div style="width: {{xpPct}}%; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #D8962A, #C4572A, #9C2E1C, #6B2A55); transition: width 0.5s"></div>
+      </div>
+    </div>
+  </header>
+  <svg width="390" height="12" viewBox="0 0 390 12" aria-hidden="true" style="display: block; flex-shrink: 0; background: #1E3A32">
+    <defs>
+      <linearGradient id="sasiranganR" x1="0" y1="0" x2="390" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#D8962A"></stop>
+        <stop offset="0.3" stop-color="#C4572A"></stop>
+        <stop offset="0.55" stop-color="#9C2E1C"></stop>
+        <stop offset="0.8" stop-color="#6B2A55"></stop>
+        <stop offset="1" stop-color="#3E6B4F"></stop>
+      </linearGradient>
+      <pattern id="gigiHaruanR" width="16" height="12" patternUnits="userSpaceOnUse">
+        <path d="M0 0 L8 0 L0 12 Z M8 0 L16 0 L16 12 Z" fill="#1E3A32"></path>
+        <path d="M4.5 12 L8 6.5 L11.5 12 Z" fill="#24180F" fill-opacity="0.35"></path>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="390" height="12" fill="url(#sasiranganR)"></rect>
+    <rect x="0" y="0" width="390" height="12" fill="url(#gigiHaruanR)"></rect>
+  </svg>
+
+  <main class="bp-scroll" style="flex: 1; overflow-y: auto; padding: 16px 16px 96px; display: flex; flex-direction: column; gap: 16px">
+
+    <section aria-label="Ringkasan" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <button type="button" class="bp-link" onClick="{{goKoin}}" style="padding: 14px; border-radius: 16px; background: #24180F; color: #F6EAD2; text-decoration: none; display: flex; flex-direction: column; gap: 4px">
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #CFC2A8">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="#D8962A"></circle><path d="M10 5 L14 10 L10 15 L6 10 Z" fill="none" stroke="#24180F" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+          Koin
+        </span>
+        <span class="bp-num" style="font-size: 26px; font-weight: 800; line-height: 1.1">{{balance}}</span>
+        <span style="font-size: 11px; font-weight: 600; color: #D8962A">Isi koin →</span>
+      </button>
+      <div style="padding: 14px; border-radius: 16px; background: #FBF7F0; border: 1px solid #E2D4BE; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8A5A12">Bapanduk</span>
+        <span class="bp-num" style="font-size: 26px; font-weight: 800; line-height: 1.1">{{bpCount}}</span>
+        <span style="font-size: 11px; color: #6A5644">transaksi barter</span>
+      </div>
+      <div style="padding: 14px; border-radius: 16px; background: #FBF7F0; border: 1px solid #E2D4BE; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8A5A12">Jukung</span>
+        <span class="bp-num" style="font-size: 26px; font-weight: 800; line-height: 1.1">5</span>
+        <span style="font-size: 11px; color: #6A5644">acil disinggahi</span>
+      </div>
+      <div style="padding: 14px; border-radius: 16px; background: #FBF7F0; border: 1px solid #E2D4BE; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8A5A12">Kata Banjar</span>
+        <span class="bp-num" style="font-size: 26px; font-weight: 800; line-height: 1.1">{{learned}}</span>
+        <span style="font-size: 11px; color: #6A5644">dari {{totalWords}} kata dipelajari</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="lokJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; overflow: hidden">
+      <div style="position: relative; height: 110px; background: #E9DEC8">
+        <svg width="358" height="110" viewBox="0 0 358 110" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+          <path d="M-10 30 C 80 10, 150 90, 220 70 S 330 30, 370 60" fill="none" stroke="#C7B796" stroke-width="56"></path>
+          <path d="M-10 30 C 80 10, 150 90, 220 70 S 330 30, 370 60" fill="none" stroke="#A9BFAE" stroke-width="46"></path>
+          <path class="bp-flow3" d="M-10 30 C 80 10, 150 90, 220 70 S 330 30, 370 60" fill="none" stroke="#C9D8CC" stroke-width="1.5" stroke-dasharray="10 30"></path>
+          <path d="M220 70 C 230 90, 240 100, 250 120" fill="none" stroke="#A9BFAE" stroke-width="18"></path>
+          <g fill="none" stroke="#7C6A50" stroke-width="1.4" stroke-linejoin="round"><path d="M60 92 L70 78 L80 92 M62 92 V100 H78 V92"></path><path d="M290 100 L300 86 L310 100 M292 100 V108 H308 V100"></path></g>
+        </svg>
+        <div style="position: absolute; left: 206px; top: 56px; width: 28px; height: 28px">
+          <span class="bp-pulse" style="position: absolute; inset: 6px; border-radius: 8px; background: #9C2E1C"></span>
+          <span style="position: absolute; inset: 7px; border-radius: 7px; background: #9C2E1C; border: 2.5px solid #FBF7F0"></span>
+        </div>
+        <span style="position: absolute; left: 12px; top: 10px; padding: 4px 8px; border-radius: 8px; background: rgba(251, 247, 240, 0.9); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; color: #1E3A32">LOKASI SAAT INI</span>
+      </div>
+      <div style="padding: 14px 16px 16px">
+        <h2 id="lokJudul" style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.2">Pasar Terapung Muara Kuin</h2>
+        <p style="margin: 4px 0 0; font-size: 12px; color: #6A5644">Kuin Utara, Banjarmasin Utara · Sungai Barito</p>
+        <div style="display: flex; gap: 16px; margin-top: 10px; font-size: 12px; font-weight: 700; color: #24180F">
+          <span style="display: flex; align-items: center; gap: 6px">
+            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8A5A12" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+            <span class="bp-num">{{clock}} WITA</span>
+          </span>
+          <span style="display: flex; align-items: center; gap: 6px">
+            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8A5A12" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22"></path></svg>
+            {{marketState}}
+          </span>
+        </div>
+        <sc-if value="{{hasGeo}}" hint-placeholder-val="{{ false }}">
+          <p class="bp-num" style="margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; background: #F2E9DA; font-size: 12px; color: #24180F">{{geoText}}</p>
+        </sc-if>
+        <div style="display: flex; gap: 8px; margin-top: 12px">
+          <button onClick="{{locate}}" style="flex: 1; height: 44px; border-radius: 12px; border: 1.5px solid #1E3A32; background: transparent; font-family: inherit; font-size: 13px; font-weight: 800; color: #1E3A32; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">
+            <sc-if value="{{locating}}" hint-placeholder-val="{{ false }}">
+              <svg class="bp-spin" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linecap="round"><path d="M12 3a9 9 0 1 1-9 9"></path></svg>
+            </sc-if>
+            {{locateText}}
+          </button>
+          <button type="button" class="bp-link" onClick="{{goPeta}}" style="flex: 1; height: 44px; border-radius: 12px; background: #1E3A32; color: #F6EAD2; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Lihat di peta</button>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="kataJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; padding: 16px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <h2 id="kataJudul" style="margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Kata Banjar hari ini</h2>
+        <span class="bp-num" style="font-size: 11px; font-weight: 700; color: #6A5644">{{wordPos}}</span>
+      </div>
+      <button onClick="{{flip}}" aria-label="{{flipAria}}" class="{{flipClass}}" style="margin-top: 12px; width: 100%; min-height: 168px; padding: 18px; border-radius: 16px; border: none; background: {{cardBg}}; color: {{cardFg}}; font-family: inherit; text-align: left; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; cursor: pointer; position: relative; overflow: hidden">
+        <svg width="80" height="12" viewBox="0 0 80 12" aria-hidden="true" style="position: absolute; right: 14px; top: 14px; opacity: 0.5"><path d="M0 12 L8 0 L16 12 L24 0 L32 12 L40 0 L48 12 L56 0 L64 12 L72 0 L80 12" fill="none" stroke="#D8962A" stroke-width="1.6"></path></svg>
+        <sc-if value="{{front}}" hint-placeholder-val="{{ true }}">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75">Bahasa Banjar</span>
+          <span style="font-family: 'Young Serif', Georgia, serif; font-size: 38px; line-height: 1.05">{{w.word}}</span>
+          <span style="font-size: 12px; font-weight: 700; opacity: 0.8">Ketuk kartu untuk melihat artinya</span>
+        </sc-if>
+        <sc-if value="{{back}}" hint-placeholder-val="{{ false }}">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8A5A12">{{w.word}} artinya</span>
+          <span style="font-family: 'Young Serif', Georgia, serif; font-size: 26px; line-height: 1.15; color: #24180F">{{w.arti}}</span>
+          <span style="display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px dashed #DDB26A">
+            <span style="font-size: 14px; font-weight: 800; font-style: italic; color: #24180F">“{{w.contoh}}”</span>
+            <span style="font-size: 12px; color: #6A5644">{{w.terjemah}}</span>
+          </span>
+        </sc-if>
+      </button>
+      <div style="display: flex; gap: 8px; margin-top: 10px">
+        <button onClick="{{speak}}" style="flex: 1; height: 44px; border-radius: 12px; border: 1.5px solid #E2D4BE; background: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 800; color: #24180F; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">
+          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#24180F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9Z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"></path></svg>
+          {{speakText}}
+        </button>
+        <button onClick="{{nextWord}}" style="flex: 1; height: 44px; border-radius: 12px; border: none; background: #1E3A32; font-family: inherit; font-size: 13px; font-weight: 800; color: #F6EAD2; cursor: pointer">Kata lain</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="ujiJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; padding: 16px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <h2 id="ujiJudul" style="margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Uji kata · +5 XP</h2>
+        <span class="bp-num" style="font-size: 11px; font-weight: 700; color: #6A5644">Benar {{score}}</span>
+      </div>
+      <p style="margin: 10px 0 0; font-size: 16px; font-weight: 700; line-height: 1.4">Apa arti <span style="font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 20px; color: #9C2E1C">“{{q.word}}”</span>?</p>
+      <div role="group" aria-label="Pilihan jawaban" style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px">
+        <sc-for list="{{q.options}}" as="o" hint-placeholder-count="3">
+          <button onClick="{{o.pick}}" disabled="{{o.locked}}" style="min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px; border-radius: 12px; border: 1.5px solid {{o.border}}; background: {{o.bg}}; font-family: inherit; font-size: 14px; font-weight: 700; color: {{o.color}}; text-align: left; cursor: pointer">
+            {{o.text}}
+            <span style="font-size: 12px; font-weight: 800">{{o.mark}}</span>
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{answered}}" hint-placeholder-val="{{ false }}">
+        <div class="bp-pop" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px">
+          <span style="font-size: 13px; font-weight: 800; color: {{fbColor}}">{{feedback}}</span>
+          <button onClick="{{nextQ}}" style="height: 44px; padding: 0 16px; border-radius: 12px; border: none; background: #D8962A; font-family: inherit; font-size: 13px; font-weight: 800; color: #24180F; cursor: pointer">Soal berikutnya</button>
+        </div>
+      </sc-if>
+    </section>
+
+    <section aria-labelledby="ungJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; padding: 16px 16px 8px">
+      <h2 id="ungJudul" style="margin: 0 0 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Ungkapan berguna di pasar</h2>
+      <sc-for list="{{phrases}}" as="p" hint-placeholder-count="5">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #EFE5D4">
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 14px; font-weight: 800; color: #24180F">{{p.b}}</span>
+            <span style="font-size: 12px; color: #6A5644">{{p.i}}</span>
+          </span>
+          <button onClick="{{p.say}}" aria-label="Dengarkan: {{p.b}}" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; border: none; background: {{p.bg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="{{p.fg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9Z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg>
+          </button>
+        </div>
+      </sc-for>
+    </section>
+
+    <section aria-labelledby="lencanaJudul" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; padding: 16px">
+      <h2 id="lencanaJudul" style="margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A5A12">Lencana</h2>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 12px">
+        <sc-for list="{{badges}}" as="b" hint-placeholder-count="4">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+            <span style="width: 64px; height: 64px; border-radius: 32px; border: 2.5px {{b.lineStyle}} {{b.ring}}; background: {{b.bg}}; display: flex; align-items: center; justify-content: center; transform: rotate(-6deg)">
+              <span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; color: {{b.ring}}">{{b.mono}}</span>
+            </span>
+            <span style="font-size: 11px; font-weight: 800; line-height: 1.25; color: {{b.label}}">{{b.name}}</span>
+            <span style="font-size: 10px; line-height: 1.3; color: #6A5644">{{b.hint}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section aria-label="Lainnya" style="background: #FBF7F0; border: 1px solid #E2D4BE; border-radius: 18px; overflow: hidden">
+      <button type="button" class="bp-link" onClick="{{goKoin}}" style="min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; font-size: 14px; font-weight: 700; color: #24180F; text-decoration: none; border-bottom: 1px solid #EFE5D4">Riwayat koin &amp; bapanduk<span aria-hidden="true" style="color: #6A5644">›</span></button>
+      <button type="button" class="bp-link" onClick="{{goPeta}}" style="min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; font-size: 14px; font-weight: 700; color: #24180F; text-decoration: none; border-bottom: 1px solid #EFE5D4">Jukung favorit pian<span aria-hidden="true" style="color: #6A5644">›</span></button>
+      <a href="Masuk.dc.html" style="min-height: 52px; display: flex; align-items: center; padding: 0 16px; font-size: 14px; font-weight: 800; color: #9C2E1C; text-decoration: none">Keluar akun</a>
+    </section>
+  </main>
+
+  <nav aria-label="Navigasi utama" style="position: absolute; left: 0; right: 0; bottom: 0; height: 74px; padding-bottom: 10px; box-sizing: border-box; display: flex; background: #FBF7F0; border-top: 1px solid #E2D4BE; z-index: 4">
+    <button type="button" class="bp-link" onClick="{{goBeranda}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M2 14 L8 11 L12 3 L16 11 L22 14 M5 13 V21 H19 V13 M10 21 V16 H14 V21"></path></svg>
+      Beranda
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goPeta}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round"><path d="M3 6 L9 4 L15 6 L21 4 V18 L15 20 L9 18 L3 20 Z M9 4 V18 M15 6 V20"></path></svg>
+      Peta
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goKoin}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L16 12 L12 17 L8 12 Z"></path></svg>
+      Koin
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button aria-current="page" style="flex: 1; border: none; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-family: inherit; font-size: 11px; font-weight: 800; color: #1E3A32; cursor: pointer">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg>
+      Profil
+      <span style="width: 6px; height: 6px; transform: rotate(45deg); background: #D8962A"></span>
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"balance":{"editor":null,"tsType":"number"},"bpCount":{"editor":null,"tsType":"number"},"go":{"editor":null},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.WORDS = [
+      { word: 'Pian', arti: 'kamu, anda (sopan)', contoh: 'Pian handak tulak ka mana?', terjemah: 'Anda mau pergi ke mana?' },
+      { word: 'Ulun', arti: 'saya (sopan)', contoh: 'Ulun urang Bandung.', terjemah: 'Saya orang Bandung.' },
+      { word: 'Kada', arti: 'tidak', contoh: 'Kada papa, Cil.', terjemah: 'Tidak apa-apa, Bi.' },
+      { word: 'Handak', arti: 'mau, ingin', contoh: 'Ulun handak manukar iwak.', terjemah: 'Saya mau membeli ikan.' },
+      { word: 'Manukar', arti: 'membeli', contoh: 'Manukar wadai di jukung.', terjemah: 'Membeli kue di perahu.' },
+      { word: 'Bungas', arti: 'cantik, indah', contoh: 'Bungas banar sungainya.', terjemah: 'Indah sekali sungainya.' },
+      { word: 'Nyaman', arti: 'enak', contoh: 'Nyaman banar soto ini.', terjemah: 'Enak sekali soto ini.' },
+      { word: 'Larang', arti: 'mahal', contoh: 'Iwak ini kada larang.', terjemah: 'Ikan ini tidak mahal.' },
+      { word: 'Ganal', arti: 'besar', contoh: 'Iwak haruan ini ganal banar.', terjemah: 'Ikan gabus ini besar sekali.' },
+      { word: 'Halus', arti: 'kecil', contoh: 'Pisangnya halus-halus.', terjemah: 'Pisangnya kecil-kecil.' },
+      { word: 'Kawa', arti: 'bisa, sanggup', contoh: 'Kawa ditawar kah?', terjemah: 'Bisa ditawar?' },
+      { word: 'Bulik', arti: 'pulang', contoh: 'Acil sudah bulik.', terjemah: 'Bibi sudah pulang.' },
+      { word: 'Wayah ini', arti: 'sekarang', contoh: 'Wayah ini pasar ramai banar.', terjemah: 'Sekarang pasar ramai sekali.' },
+      { word: 'Hanyar', arti: 'baru', contoh: 'Iwaknya hanyar ditangkap.', terjemah: 'Ikannya baru ditangkap.' },
+      { word: 'Dangsanak', arti: 'saudara', contoh: 'Salamat datang, dangsanak!', terjemah: 'Selamat datang, saudara!' },
+      { word: 'Iwak', arti: 'ikan', contoh: 'Iwak papuyu digoreng.', terjemah: 'Ikan betok digoreng.' },
+      { word: 'Wadai', arti: 'kue', contoh: 'Wadai bingka nyaman banar.', terjemah: 'Kue bingka enak sekali.' },
+      { word: 'Kiyau', arti: 'panggil', contoh: 'Kiyau acil nang di jukung itu.', terjemah: 'Panggil bibi yang di perahu itu.' },
+      { word: 'Ayuha', arti: 'baiklah, iya', contoh: 'Ayuha, jadi ai.', terjemah: 'Baiklah, jadi.' },
+      { word: 'Kawal', arti: 'teman', contoh: 'Ulun datang lawan kawal.', terjemah: 'Saya datang dengan teman.' }
+    ];
+    var start = Math.floor(Math.random() * this.WORDS.length);
+    this.state = {
+      wi: start, flipped: false, learnedSet: {}, xp: 340,
+      qi: this.randQ(-1), qPick: null, score: 0,
+      clock: this.nowWita(), geo: null, locating: false, speaking: null
+    };
+    this.tick = null;
+  }
+  componentDidMount() {
+    var self = this;
+    this.tick = setInterval(function () { self.setState({ clock: self.nowWita() }); }, 15000);
+  }
+  componentWillUnmount() {
+    if (this.tick) clearInterval(this.tick);
+    try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {}
+  }
+  nowWita() {
+    try {
+      var p = new Intl.DateTimeFormat('id-ID', { timeZone: 'Asia/Makassar', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+      return p.replace(':', '.');
+    } catch (e) { return '--.--'; }
+  }
+  randQ(prev) {
+    var n = 20, q = prev;
+    while (q === prev) q = Math.floor(Math.random() * n);
+    var others = [];
+    while (others.length < 2) {
+      var k = Math.floor(Math.random() * n);
+      if (k !== q && others.indexOf(k) < 0) others.push(k);
+    }
+    var opts = [q].concat(others);
+    for (var i = opts.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = opts[i]; opts[i] = opts[j]; opts[j] = t; }
+    return { q: q, opts: opts };
+  }
+  say(text, key) {
+    var self = this;
+    try {
+      var syn = window.speechSynthesis;
+      if (!syn) return;
+      syn.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'id-ID'; u.rate = 0.85;
+      u.onend = function () { self.setState({ speaking: null }); };
+      u.onerror = function () { self.setState({ speaking: null }); };
+      this.setState({ speaking: key });
+      syn.speak(u);
+      setTimeout(function () { if (self.state.speaking === key) self.setState({ speaking: null }); }, 6000);
+    } catch (e) {}
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var W = this.WORDS;
+    var w = W[s.wi];
+    var learned = 3 + Object.keys(s.learnedSet).length;
+    if (learned > W.length) learned = W.length;
+    var hour = parseInt(String(s.clock).split('.')[0], 10);
+    var marketState = isNaN(hour) ? 'Pasar subuh' : (hour >= 4 && hour < 9 ? 'Pasar sedang buka' : 'Pasar buka lagi 04.30');
+
+    var Q = s.qi;
+    var answered = s.qPick !== null;
+    var correctIdx = Q.q;
+    var options = Q.opts.map(function (k) {
+      var isRight = k === correctIdx;
+      var picked = s.qPick === k;
+      var bg = '#FFFFFF', border = '#E2D4BE', color = '#24180F', mark = '';
+      if (answered && isRight) { bg = '#E3EBE4'; border = '#1E3A32'; color = '#1E3A32'; mark = 'Benar'; }
+      else if (answered && picked) { bg = '#F7E1DC'; border = '#9C2E1C'; color = '#9C2E1C'; mark = 'Kurang tepat'; }
+      return {
+        text: W[k].arti, bg: bg, border: border, color: color, mark: mark, locked: answered,
+        pick: function () {
+          if (self.state.qPick !== null) return;
+          var ok = k === correctIdx;
+          self.setState({ qPick: k, score: self.state.score + (ok ? 1 : 0), xp: self.state.xp + (ok ? 5 : 0) });
+        }
+      };
+    });
+    var gotIt = answered && s.qPick === correctIdx;
+
+    var PHR = [
+      { b: 'Napa haja nang dijual, Cil?', i: 'Apa saja yang dijual, Bi?' },
+      { b: 'Barapa ini, Cil?', i: 'Berapa harga ini, Bi?' },
+      { b: 'Kawa kah kurang sadikit?', i: 'Bisa kurang sedikit?' },
+      { b: 'Nyaman banar wadainya!', i: 'Enak sekali kuenya!' },
+      { b: 'Tarima kasih banyak, Cil.', i: 'Terima kasih banyak, Bi.' }
+    ];
+    var phrases = PHR.map(function (p, i) {
+      var on = s.speaking === 'p' + i;
+      return { b: p.b, i: p.i, bg: on ? '#1E3A32' : '#F2E9DA', fg: on ? '#F6EAD2' : '#1E3A32', say: function () { self.say(p.b, 'p' + i); } };
+    });
+
+    var lidah = learned >= 10;
+    var BADGES = [
+      { mono: '04.30', name: 'Penjelajah Subuh', hint: 'Datang sebelum subuh', on: true },
+      { mono: 'UP', name: 'Urang Pasar', hint: '5× bapanduk', on: true },
+      { mono: 'LB', name: 'Lidah Banjar', hint: lidah ? 'Terbuka!' : 'Pelajari 10 kata', on: lidah },
+      { mono: 'SA', name: 'Sahabat Acil', hint: 'Singgah 10 jukung', on: false }
+    ];
+    var badges = BADGES.map(function (b) {
+      return { mono: b.mono, name: b.name, hint: b.hint,
+        ring: b.on ? '#9C2E1C' : '#A99B85', bg: b.on ? '#F6E7C8' : 'transparent',
+        lineStyle: b.on ? 'solid' : 'dashed', label: b.on ? '#24180F' : '#6A5644' };
+    });
+
+    var geoText = '';
+    if (s.geo && s.geo.ok) geoText = 'Lokasi perangkat: ' + s.geo.lat.toFixed(5) + ', ' + s.geo.lng.toFixed(5) + ' · akurasi ± ' + Math.round(s.geo.acc) + ' m';
+    else if (s.geo && !s.geo.ok) geoText = 'Lokasi perangkat tidak bisa diakses di tampilan ini, jadi ditampilkan lokasi pasar.';
+
+    return {
+      balance: typeof this.props.balance === 'number' ? this.props.balance : 128,
+      bpCount: typeof this.props.bpCount === 'number' ? this.props.bpCount : 7,
+      goBeranda: function () { if (typeof self.props.go === 'function') self.props.go('beranda'); },
+      goPeta: function () { if (typeof self.props.go === 'function') self.props.go('peta'); },
+      goKoin: function () { if (typeof self.props.go === 'function') self.props.go('koin'); },
+      goProfil: function () {},
+      xp: s.xp, xpPct: Math.min(100, Math.round(s.xp / 5)),
+      learned: learned, totalWords: W.length,
+      clock: s.clock, marketState: marketState,
+      hasGeo: !!s.geo, geoText: geoText, locating: s.locating,
+      locateText: s.locating ? 'Mencari lokasi…' : 'Perbarui lokasi',
+      locate: function () {
+        if (self.state.locating) return;
+        if (typeof navigator === 'undefined' || !navigator.geolocation) { self.setState({ geo: { ok: false } }); return; }
+        self.setState({ locating: true });
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          self.setState({ locating: false, geo: { ok: true, lat: pos.coords.latitude, lng: pos.coords.longitude, acc: pos.coords.accuracy } });
+        }, function () {
+          self.setState({ locating: false, geo: { ok: false } });
+        }, { timeout: 8000, maximumAge: 60000 });
+      },
+
+      w: w, front: !s.flipped, back: s.flipped,
+      wordPos: (s.wi + 1) + ' / ' + W.length,
+      cardBg: s.flipped ? '#F6E7C8' : '#1E3A32',
+      cardFg: s.flipped ? '#24180F' : '#F6EAD2',
+      flipClass: s.flipped ? 'bp-flip' : '',
+      flipAria: s.flipped ? 'Kembali ke kata ' + w.word : 'Lihat arti kata ' + w.word,
+      flip: function () {
+        var ls = Object.assign({}, self.state.learnedSet);
+        if (!self.state.flipped) ls[self.state.wi] = true;
+        self.setState({ flipped: !self.state.flipped, learnedSet: ls });
+      },
+      nextWord: function () {
+        var n = self.state.wi;
+        while (n === self.state.wi) n = Math.floor(Math.random() * W.length);
+        self.setState({ wi: n, flipped: false });
+      },
+      speak: function () { self.say(s.flipped ? w.contoh : w.word, 'word'); },
+      speakText: s.speaking === 'word' ? 'Memutar…' : (s.flipped ? 'Dengar contoh' : 'Dengar kata'),
+
+      q: { word: W[correctIdx].word, options: options },
+      answered: answered, score: s.score,
+      feedback: gotIt ? 'Pintar banar! +5 XP' : 'Hampir! Jawabannya: ' + W[correctIdx].arti,
+      fbColor: gotIt ? '#1E3A32' : '#9C2E1C',
+      nextQ: function () { self.setState({ qi: self.randQ(self.state.qi.q), qPick: null }); },
+
+      phrases: phrases,
+      badges: badges
+    };
+  }
+}
+</script>
+</body>
+</html>

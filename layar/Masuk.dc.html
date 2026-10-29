@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Daftar atau Masuk</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5A3418}a:hover{color:#3B2210}
+input::placeholder{color:#7A6250;opacity:1}
+input:focus{outline:none}
+.bp-field:focus-within{border-color:#5A3418;box-shadow:0 0 0 3px rgba(90,52,24,.18)}
+@keyframes bp-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bp-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.bp-rise{animation:bp-rise .35s ease-out both}
+.bp-shake{animation:bp-shake .3s ease-in-out 2}
+.bp-scroll::-webkit-scrollbar{display:none}
+.bp-scroll{scrollbar-width:none}
+.bp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+<div class="bp-scroll" style="width: 390px; height: 844px; position: relative; overflow-x: hidden; overflow-y: auto; box-sizing: border-box; padding: 58px 28px 0; display: flex; flex-direction: column; align-items: stretch; background: #FFCF6E; color: #3B2210; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+  <div style="display: flex; justify-content: center">
+    <img src="assets/logo-bapanduk.png" alt="Logo Bapanduk" style="width: 196px; height: 131px; object-fit: contain; display: block">
+  </div>
+
+  <h1 style="margin: 22px 0 0; text-align: center; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15; color: #3B2210">{{title}}</h1>
+  <p style="margin: 6px 0 0; text-align: center; font-size: 14px; line-height: 1.45; color: #4E2E14">{{subtitle}}</p>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px">
+    <a href="Main.dc.html" style="height: 52px; border-radius: 26px; border: 1.5px solid #E0B45A; background: #FFFBF3; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; font-weight: 700; color: #3B2210; text-decoration: none">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#3B2210" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3Z"></path></svg>
+      Masuk lewat Google
+    </a>
+    <a href="Main.dc.html" style="height: 52px; border-radius: 26px; background: #161009; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; font-weight: 700; color: #FFFBF3; text-decoration: none">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FFFBF3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg>
+      Lanjutkan lewat Apple
+    </a>
+  </div>
+
+  <div aria-hidden="true" style="display: flex; align-items: center; gap: 12px; margin: 20px 0; font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #5A3418">
+    <svg width="100%" height="8" viewBox="0 0 120 8" preserveAspectRatio="none" style="flex: 1"><defs><linearGradient id="sasiranganM1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#557A2A"></stop><stop offset="0.5" stop-color="#6B2A55"></stop><stop offset="1" stop-color="#C4572A"></stop></linearGradient></defs><path d="M0 8 L4 0 L8 8 L12 0 L16 8 L20 0 L24 8 L28 0 L32 8 L36 0 L40 8 L44 0 L48 8 L52 0 L56 8 L60 0 L64 8 L68 0 L72 8 L76 0 L80 8 L84 0 L88 8 L92 0 L96 8 L100 0 L104 8 L108 0 L112 8 L116 0 L120 8" fill="none" stroke="url(#sasiranganM1)" stroke-width="1.6"></path></svg>
+    ATAU
+    <svg width="100%" height="8" viewBox="0 0 120 8" preserveAspectRatio="none" style="flex: 1"><defs><linearGradient id="sasiranganM2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4572A"></stop><stop offset="0.5" stop-color="#6B2A55"></stop><stop offset="1" stop-color="#557A2A"></stop></linearGradient></defs><path d="M0 8 L4 0 L8 8 L12 0 L16 8 L20 0 L24 8 L28 0 L32 8 L36 0 L40 8 L44 0 L48 8 L52 0 L56 8 L60 0 L64 8 L68 0 L72 8 L76 0 L80 8 L84 0 L88 8 L92 0 L96 8 L100 0 L104 8 L108 0 L112 8 L116 0 L120 8" fill="none" stroke="url(#sasiranganM2)" stroke-width="1.6"></path></svg>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px">
+    <sc-if value="{{isDaftar}}" hint-placeholder-val="{{ true }}">
+      <label class="bp-field" style="height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 18px; border-radius: 26px; border: 1.5px solid #8A5A2B; background: #FFFBF3; transition: box-shadow 0.2s">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="8" r="4" fill="#5A3418"></circle><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7Z" fill="#5A3418"></path></svg>
+        <span class="bp-sr">Nama lengkap</span>
+        <input type="text" autocomplete="name" placeholder="Nama lengkap" value="{{name}}" onChange="{{onName}}" style="flex: 1; min-width: 0; height: 100%; border: none; background: transparent; font-family: inherit; font-size: 15px; color: #3B2210">
+      </label>
+    </sc-if>
+    <label class="bp-field" style="height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 18px; border-radius: 26px; border: 1.5px solid #8A5A2B; background: #FFFBF3; transition: box-shadow 0.2s">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#5A3418" stroke-width="2.2" stroke-linejoin="round" style="flex-shrink: 0"><rect x="6.5" y="2.5" width="11" height="19" rx="2"></rect><path d="M10.5 18h3"></path></svg>
+      <span class="bp-sr">Nomor handphone atau email</span>
+      <input type="text" inputmode="email" autocomplete="username" placeholder="Nomor handphone/email" value="{{contact}}" onChange="{{onContact}}" style="flex: 1; min-width: 0; height: 100%; border: none; background: transparent; font-family: inherit; font-size: 15px; color: #3B2210">
+    </label>
+  </div>
+
+  <div style="margin-top: 18px">
+    <sc-if value="{{valid}}" hint-placeholder-val="{{ false }}">
+      <a href="Main.dc.html" class="bp-rise" style="height: 56px; border-radius: 28px; background: #5A3418; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; font-weight: 800; letter-spacing: 0.04em; color: #FFFBF3; text-decoration: none; box-shadow: 0 10px 22px rgba(59, 34, 16, 0.28)">
+        {{ctaText}}
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FFFBF3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </sc-if>
+    <sc-if value="{{invalid}}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{tryEmpty}}" class="{{shakeClass}}" style="width: 100%; height: 56px; border-radius: 28px; border: none; background: #8A6A4F; font-family: inherit; font-size: 15px; font-weight: 800; letter-spacing: 0.04em; color: #FFFBF3; cursor: pointer">{{ctaText}}</button>
+    </sc-if>
+    <p aria-live="polite" style="margin: 8px 0 0; min-height: 18px; text-align: center; font-size: 12px; font-weight: 700; color: #8A1F12">{{error}}</p>
+  </div>
+
+  <p style="margin: 4px 0 0; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 14px; color: #4E2E14">
+    {{switchLead}}
+    <button onClick="{{switchMode}}" style="min-height: 44px; padding: 0 4px; border: none; background: transparent; font-family: inherit; font-size: 14px; font-weight: 800; color: #3B2210; text-decoration: underline; text-underline-offset: 3px; cursor: pointer">{{switchText}}</button>
+  </p>
+
+  <a href="Pedagang.dc.html" style="margin: 8px 0 28px; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 16px; border: 1.5px dashed #8A5A2B; font-size: 13px; font-weight: 700; color: #3B2210; text-decoration: none">
+    <svg width="26" height="16" viewBox="0 0 44 26" aria-hidden="true"><path d="M2 18 L22 4 L42 18 Q22 25 2 18 Z" fill="#557A2A" stroke="#3B2210" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+    Pian pedagang jukung? Masuk mode pedagang
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mode: 'daftar', name: '', contact: '', error: '', shake: 0 };
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var daftar = s.mode === 'daftar';
+    var contactOk = s.contact.trim().length >= 5;
+    var valid = contactOk && (!daftar || s.name.trim().length >= 2);
+    return {
+      isDaftar: daftar,
+      title: daftar ? 'Daftar sekarang' : 'Masuk ke akun',
+      subtitle: daftar ? 'Masuk atau daftar untuk melanjutkan.' : 'Gunakan nomor atau email yang sudah terdaftar.',
+      name: s.name,
+      contact: s.contact,
+      onName: function (e) { self.setState({ name: e.target.value, error: '' }); },
+      onContact: function (e) { self.setState({ contact: e.target.value, error: '' }); },
+      valid: valid,
+      invalid: !valid,
+      ctaText: daftar ? 'Daftar dengan nomor/email' : 'Masuk',
+      error: s.error,
+      shakeClass: s.shake % 2 === 1 ? 'bp-shake' : '',
+      tryEmpty: function () {
+        var msg = daftar && self.state.name.trim().length < 2
+          ? 'Isi nama lengkap dulu, ya.'
+          : 'Isi nomor handphone atau email dulu, ya.';
+        self.setState({ error: msg, shake: self.state.shake + 1 });
+      },
+      switchLead: daftar ? 'Sudah punya akun?' : 'Belum punya akun?',
+      switchText: daftar ? 'Masuk' : 'Daftar',
+      switchMode: function () { self.setState({ mode: daftar ? 'masuk' : 'daftar', error: '' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

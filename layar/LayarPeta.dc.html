@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Peta Sungai</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; background: #F2E9DA; color: #24180F; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+  <header style="background: #1E3A32; padding: 54px 20px 14px; flex-shrink: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px">
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <p style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #CFC2A8">Muara Kuin · Sungai Barito</p>
+      <h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.1; color: #F6EAD2">Peta sungai</h1>
+    </div>
+    <p aria-live="polite" style="margin: 0 0 4px; text-align: right; font-size: 12px; line-height: 1.35; font-weight: 600; color: #E4D8C0"><span style="font-size: 20px; font-weight: 800; color: #D8962A">{{activeCount}}</span> jukung<br>berjualan</p>
+  </header>
+  <svg width="390" height="12" viewBox="0 0 390 12" aria-hidden="true" style="display: block; flex-shrink: 0; background: #1E3A32">
+    <defs>
+      <linearGradient id="sasiranganP" x1="0" y1="0" x2="390" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#D8962A"></stop>
+        <stop offset="0.3" stop-color="#C4572A"></stop>
+        <stop offset="0.55" stop-color="#9C2E1C"></stop>
+        <stop offset="0.8" stop-color="#6B2A55"></stop>
+        <stop offset="1" stop-color="#3E6B4F"></stop>
+      </linearGradient>
+      <pattern id="gigiHaruanP" width="16" height="12" patternUnits="userSpaceOnUse">
+        <path d="M0 0 L8 0 L0 12 Z M8 0 L16 0 L16 12 Z" fill="#1E3A32"></path>
+        <path d="M4.5 12 L8 6.5 L11.5 12 Z" fill="#24180F" fill-opacity="0.35"></path>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="390" height="12" fill="url(#sasiranganP)"></rect>
+    <rect x="0" y="0" width="390" height="12" fill="url(#gigiHaruanP)"></rect>
+  </svg>
+
+  <div class="bp-scroll" role="group" aria-label="Saring dagangan" style="flex-shrink: 0; display: flex; gap: 8px; padding: 10px 16px; overflow-x: auto; background: #F2E9DA; border-bottom: 1px solid #E2D4BE">
+    <sc-for list="{{chips}}" as="c" hint-placeholder-count="7">
+      <button onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="flex-shrink: 0; height: 36px; padding: 0 14px; border-radius: 18px; border: 1.5px solid {{c.border}}; background: {{c.bg}}; color: {{c.color}}; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s">{{c.label}}</button>
+    </sc-for>
+  </div>
+
+  <div style="position: relative; flex: 1; overflow: hidden; background: #E9DEC8; margin-bottom: 74px">
+
+    <div style="position: absolute; left: 0; top: 0; width: 390px; height: 570px; transform-origin: 0 0; transform: translate({{tx}}px, {{ty}}px) scale({{z}}); transition: transform 0.55s cubic-bezier(.2,.8,.2,1)">
+
+      <svg width="790" height="970" viewBox="-200 -200 790 970" aria-hidden="true" style="position: absolute; left: -200px; top: -200px">
+        <defs>
+          <pattern id="sawah" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+            <path d="M0 5 H10" stroke="#B9C59A" stroke-width="1.2"></path>
+          </pattern>
+        </defs>
+        <rect x="-200" y="-200" width="790" height="970" fill="#E9DEC8"></rect>
+
+        <path d="M150 30 h120 v70 h-120 Z" fill="url(#sawah)" stroke="#C9D0AC" stroke-width="1"></path>
+        <path d="M290 120 h80 v50 h-80 Z" fill="url(#sawah)" stroke="#C9D0AC" stroke-width="1"></path>
+        <path d="M-10 470 h140 v70 h-140 Z" fill="url(#sawah)" stroke="#C9D0AC" stroke-width="1"></path>
+        <path d="M250 490 h110 v60 h-110 Z" fill="url(#sawah)" stroke="#C9D0AC" stroke-width="1"></path>
+
+        <path d="M-40 36 C 60 10, 120 0, 200 16 S 330 70, 420 60" fill="none" stroke="#D9CBB0" stroke-width="7" stroke-linecap="round"></path>
+        <path d="M-40 36 C 60 10, 120 0, 200 16 S 330 70, 420 60" fill="none" stroke="#F2E9DA" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 0"></path>
+
+        <path d="M-240 170 L-40 120 C 80 80, 160 200, 200 260 S 300 420, 440 470 L 640 540" fill="none" stroke="#C7B796" stroke-width="146" stroke-linejoin="round"></path>
+        <path d="M200 260 C 150 330, 90 380, -20 420 L -220 470" fill="none" stroke="#C7B796" stroke-width="60" stroke-linejoin="round"></path>
+        <path d="M-240 170 L-40 120 C 80 80, 160 200, 200 260 S 300 420, 440 470 L 640 540" fill="none" stroke="#A9BFAE" stroke-width="130" stroke-linejoin="round"></path>
+        <path d="M200 260 C 150 330, 90 380, -20 420 L -220 470" fill="none" stroke="#A9BFAE" stroke-width="46" stroke-linejoin="round"></path>
+
+        <path class="bp-flow" d="M-240 140 L-40 90 C 80 50, 160 170, 200 230 S 300 390, 440 440 L 640 510" fill="none" stroke="#C9D8CC" stroke-width="1.6" stroke-dasharray="14 34" stroke-linecap="round"></path>
+        <path class="bp-flow2" d="M-240 175 L-40 125 C 80 85, 160 205, 200 265 S 300 425, 440 475 L 640 545" fill="none" stroke="#C9D8CC" stroke-width="1.6" stroke-dasharray="8 40" stroke-linecap="round"></path>
+        <path class="bp-flow" d="M-240 205 L-40 155 C 80 115, 160 235, 200 295 S 300 455, 440 505 L 640 575" fill="none" stroke="#C9D8CC" stroke-width="1.6" stroke-dasharray="18 30" stroke-linecap="round"></path>
+        <path class="bp-flow2" d="M200 262 C 150 332, 90 382, -20 422 L -220 472" fill="none" stroke="#C9D8CC" stroke-width="1.4" stroke-dasharray="8 40" stroke-linecap="round"></path>
+
+        <path id="labelSungai" d="M196 300 C 240 360, 300 420, 400 456" fill="none" stroke="none"></path>
+        <text font-family="Young Serif, Georgia, serif" font-size="13" letter-spacing="3" fill="#5F7A68"><textPath href="#labelSungai" startOffset="8%">Sungai Barito</textPath></text>
+        <text x="96" y="296" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" letter-spacing="1.2" fill="#5F7A68" transform="rotate(-32 96 296)">SUNGAI KUIN</text>
+
+        <g stroke="#7C6A50" stroke-width="2" fill="#D9CBB0">
+          <rect x="54" y="36" width="12" height="44"></rect>
+        </g>
+        <g fill="#7C6A50">
+          <rect x="50" y="78" width="20" height="4"></rect>
+        </g>
+        <text x="72" y="30" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800" letter-spacing="1" fill="#6A5644">DERMAGA WISATA</text>
+
+        <g fill="none" stroke="#7C6A50" stroke-width="1.5" stroke-linejoin="round">
+          <path d="M18 216 L30 198 L42 216 M21 216 V228 H39 V216"></path>
+          <path d="M48 214 L58 199 L68 214 M50 214 V224 H66 V214"></path>
+          <path d="M196 120 L208 102 L220 120 M199 120 V132 H217 V120"></path>
+          <path d="M224 132 L234 117 L244 132 M226 132 V142 H242 V132"></path>
+          <path d="M300 300 L312 282 L324 300 M303 300 V312 H321 V300"></path>
+          <path d="M150 430 L162 412 L174 430 M153 430 V442 H171 V430"></path>
+          <path d="M180 446 L190 431 L200 446 M182 446 V456 H198 V446"></path>
+        </g>
+        <g fill="none" stroke="#7C6A50" stroke-width="1.6" stroke-linejoin="round">
+          <path d="M318 210 V236 H354 V210"></path>
+          <path d="M316 210 Q336 186 356 210 Z" fill="#D9CBB0"></path>
+          <path d="M336 186 V178"></path>
+        </g>
+        <text x="286" y="250" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" fill="#6A5644">Masjid Sultan</text>
+        <text x="286" y="261" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" fill="#6A5644">Suriansyah</text>
+        <text x="190" y="88" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800" letter-spacing="1" fill="#6A5644">KUIN UTARA</text>
+        <text x="6" y="562" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="700" fill="#6A5644">Kebun jeruk</text>
+
+        <g fill="#8FA27A">
+          <circle cx="16" cy="510" r="5"></circle><circle cx="34" cy="500" r="5"></circle><circle cx="52" cy="512" r="5"></circle>
+          <circle cx="24" cy="530" r="5"></circle><circle cx="44" cy="534" r="5"></circle><circle cx="66" cy="526" r="5"></circle>
+        </g>
+        <g fill="none" stroke="#6F8B62" stroke-width="1.5" stroke-linecap="round">
+          <path d="M120 70 q-7 -9 -14 -7 M120 70 q5 -11 14 -11 M120 70 v12"></path>
+          <path d="M268 210 q-7 -9 -14 -7 M268 210 q5 -11 14 -11 M268 210 v12"></path>
+          <path d="M8 270 q-7 -9 -14 -7 M8 270 q5 -11 14 -11 M8 270 v12"></path>
+          <path d="M222 470 q-7 -9 -14 -7 M222 470 q5 -11 14 -11 M222 470 v12"></path>
+          <path d="M360 330 q-7 -9 -14 -7 M360 330 q5 -11 14 -11 M360 330 v12"></path>
+        </g>
+      </svg>
+
+      <sc-if value="{{showRoute}}" hint-placeholder-val="{{ false }}">
+        <svg width="390" height="570" viewBox="0 0 390 570" aria-hidden="true" style="position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none">
+          <path d="{{routeD}}" fill="none" stroke="#FBF7F0" stroke-width="7" stroke-linecap="round"></path>
+          <path class="bp-march" d="{{routeD}}" fill="none" stroke="#9C2E1C" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 6"></path>
+        </svg>
+        <span class="bp-target" style="position: absolute; left: {{targetL}}px; top: {{targetT}}px; width: 56px; height: 56px; border-radius: 28px; border: 2.5px solid #9C2E1C; pointer-events: none"></span>
+      </sc-if>
+
+      <div class="bp-drift" style="position: absolute; left: 228px; top: 278px; width: 44px; height: 28px; pointer-events: none">
+        <svg width="44" height="28" viewBox="0 0 44 28" aria-hidden="true"><path d="M2 14 Q22 30 42 14 Z" fill="#D8962A"></path><rect x="12" y="6" width="18" height="8" fill="#FBF7F0" stroke="#8A5A12" stroke-width="1.2"></rect><path d="M10 6 H32" stroke="#8A5A12" stroke-width="1.6"></path></svg>
+        <span style="position: absolute; top: 26px; left: -8px; width: 60px; text-align: center; font-size: 9px; font-weight: 700; color: #6A5644">Klotok</span>
+      </div>
+
+      <div style="position: absolute; left: 184px; top: 236px; width: 24px; height: 24px; pointer-events: none">
+        <span class="bp-pulse" style="position: absolute; inset: 4px; border-radius: 8px; background: #9C2E1C"></span>
+        <span style="position: absolute; inset: 5px; border-radius: 7px; background: #9C2E1C; border: 2.5px solid #FBF7F0"></span>
+        <span style="position: absolute; top: 25px; left: -10px; width: 44px; text-align: center; font-size: 10px; font-weight: 800; color: #9C2E1C">Pian</span>
+      </div>
+
+      <sc-for list="{{boats}}" as="b" hint-placeholder-count="7">
+        <button onClick="{{b.pick}}" aria-label="{{b.aria}}" aria-pressed="{{b.pressed}}" style="position: absolute; left: {{b.left}}px; top: {{b.top}}px; width: 52px; height: 52px; padding: 0; border: none; border-radius: 26px; background: {{b.ring}}; opacity: {{b.opacity}}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: opacity 0.3s, background 0.2s">
+          <svg class="bp-bob2" width="38" height="28" viewBox="0 0 38 28" aria-hidden="true" style="animation-delay: {{b.delay}}s">
+            <path d="M10 12 L19 4 L28 12 Q19 14.5 10 12 Z" fill="{{b.hat}}"></path>
+            <path d="M2 15 Q19 30 36 15 Z" fill="{{b.hull}}"></path>
+          </svg>
+          <sc-if value="{{b.match}}" hint-placeholder-val="{{ false }}">
+            <span style="position: absolute; top: 2px; right: 2px; width: 12px; height: 12px; border-radius: 6px; background: #D8962A; border: 2px solid #FBF7F0"></span>
+          </sc-if>
+          <span style="position: absolute; top: 46px; left: -14px; width: 80px; display: flex; flex-direction: column; align-items: center; pointer-events: none">
+            <span style="font-size: 10px; font-weight: 800; color: #24180F; background: rgba(251, 247, 240, 0.85); padding: 0 4px; border-radius: 4px">{{b.short}}</span>
+            <span style="font-size: 9px; font-weight: 700; color: {{b.subColor}}">{{b.sub}}</span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="position: absolute; right: 12px; top: 12px; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #FBF7F0; border: 1px solid #E2D4BE; box-shadow: 0 4px 14px rgba(36, 24, 15, 0.12)">
+      <button onClick="{{zoomIn}}" aria-label="Perbesar peta" style="width: 44px; height: 44px; border: none; border-bottom: 1px solid #E2D4BE; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#24180F" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+      </button>
+      <button onClick="{{zoomOut}}" aria-label="Perkecil peta" style="width: 44px; height: 44px; border: none; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#24180F" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"></path></svg>
+      </button>
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: 12px; top: 12px; display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 12px; background: rgba(251, 247, 240, 0.9); font-size: 10px; font-weight: 700; color: #6A5644">
+      <svg width="16" height="16" viewBox="-10 -10 20 20"><circle cx="0" cy="0" r="9" fill="none" stroke="#6A5644" stroke-width="1.3"></circle><path d="M0 -7 L3 0 L0 7 L-3 0 Z" fill="#6A5644"></path></svg>
+      <span style="display: flex; flex-direction: column; gap: 2px"><span style="width: 40px; height: 4px; border: 1.5px solid #6A5644; border-top: none"></span>50 m</span>
+    </div>
+
+    <sc-if value="{{noSel}}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 12px 14px 10px; border-radius: 16px; background: #FBF7F0; border: 1px solid #E2D4BE; box-shadow: 0 8px 22px rgba(36, 24, 15, 0.16)">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px">
+          <label for="jamPasar" style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8A5A12">Jam pasar</label>
+          <span style="font-size: 12px; font-weight: 700; color: #6A5644">{{crowd}}</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px">
+          <span style="font-family: 'Young Serif', Georgia, serif; font-size: 26px; line-height: 1; color: #1E3A32; min-width: 74px">{{hourText}}</span>
+          <input id="jamPasar" type="range" min="4" max="9" step="0.25" value="{{hour}}" onChange="{{onHour}}" style="flex: 1; height: 32px; margin: 0">
+        </div>
+        <p style="margin: 4px 0 0; font-size: 11px; color: #6A5644">Geser jam untuk melihat jukung yang datang dan bulik. Ketuk jukung untuk melihat dagangannya.</p>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{hasSel}}" hint-placeholder-val="{{ false }}">
+      <section class="bp-sheet" aria-label="{{sel.name}}" style="position: absolute; left: 0; right: 0; bottom: 0; max-height: 372px; display: flex; flex-direction: column; border-radius: 22px 22px 0 0; background: #FBF7F0; box-shadow: 0 -10px 30px rgba(36, 24, 15, 0.2)">
+        <div aria-hidden="true" style="align-self: center; width: 40px; height: 4px; margin-top: 8px; border-radius: 2px; background: #E2D4BE"></div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px 12px">
+          <div style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 26px; background: #F6E7C8; display: flex; align-items: center; justify-content: center">
+            <svg width="38" height="34" viewBox="0 0 44 40" aria-hidden="true"><path d="M2 20 L22 8 L42 20 Q22 26 2 20 Z" fill="#D8962A" stroke="#8A5A12" stroke-width="1.2" stroke-linejoin="round"></path><circle cx="22" cy="30" r="7" fill="#1E3A32"></circle></svg>
+          </div>
+          <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+            <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 21px; line-height: 1.15; color: #24180F">{{sel.name}}</h2>
+            <p style="margin: 0; font-size: 12px; color: #6A5644">{{sel.spec}} · {{sel.dist}}</p>
+            <p style="margin: 1px 0 0; font-size: 11px; font-weight: 800; color: {{sel.statusColor}}">{{sel.status}}</p>
+          </div>
+          <button onClick="{{closeSel}}" aria-label="Tutup" style="width: 44px; height: 44px; flex-shrink: 0; border: none; border-radius: 22px; background: #F2E9DA; display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#24180F" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+        </div>
+
+        <p style="margin: 0; padding: 0 16px 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8A5A12">Dagangan acil · {{sel.count}} macam</p>
+        <div class="bp-scroll" style="flex: 1; min-height: 0; overflow-y: auto; padding: 0 16px; display: flex; flex-direction: column; gap: 6px">
+          <sc-for list="{{sel.goods}}" as="g" hint-placeholder-count="4">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 12px; background: {{g.bg}}; border: 1px solid {{g.border}}">
+              <span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 10px; background: #F2E9DA; display: flex; align-items: center; justify-content: center">
+                <sc-if value="{{g.isIwak}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linejoin="round"><path d="M4 20 C 10 11, 22 10, 30 20 C 22 30, 10 29, 4 20 Z M30 20 L37 13 V27 Z"></path></svg></sc-if>
+                <sc-if value="{{g.isSayur}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M20 36 C 8 30, 6 16, 14 6 C 22 10, 26 20, 20 36 Z M20 36 L15 14"></path></svg></sc-if>
+                <sc-if value="{{g.isBuah}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linecap="round"><circle cx="20" cy="23" r="12"></circle><path d="M20 11 V5 M20 9 C 24 5, 29 6, 30 8"></path></svg></sc-if>
+                <sc-if value="{{g.isWadai}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linejoin="round"><path d="M5 30 L20 8 L35 30 Z M10 23 H30"></path></svg></sc-if>
+                <sc-if value="{{g.isKerajinan}}" hint-placeholder-val="{{ false }}"><svg width="24" height="22" viewBox="0 0 44 30" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linejoin="round"><path d="M2 20 L22 6 L42 20 Q22 27 2 20 Z M22 6 V22"></path></svg></sc-if>
+                <sc-if value="{{g.isMakanan}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="2.6" stroke-linecap="round"><path d="M5 20 H35 C 35 29, 28 34, 20 34 C 12 34, 5 29, 5 20 Z M15 14 C 13 11, 17 9, 15 6 M24 14 C 22 11, 26 9, 24 6"></path></svg></sc-if>
+              </span>
+              <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px">
+                <span style="font-size: 14px; font-weight: 800; color: #24180F">{{g.n}}</span>
+                <span style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: #6A5644">
+                  {{g.u}}
+                  <sc-if value="{{g.b}}" hint-placeholder-val="{{ true }}">
+                    <span style="padding: 1px 6px; border-radius: 6px; background: #E3EBE4; font-size: 10px; font-weight: 800; color: #1E3A32">Bisa dipanduk</span>
+                  </sc-if>
+                </span>
+              </span>
+              <span style="display: flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 800; color: #24180F; white-space: nowrap">
+                <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="#D8962A" stroke="#24180F" stroke-width="1.2"></circle><path d="M10 5 L14 10 L10 15 L6 10 Z" fill="none" stroke="#24180F" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+                {{g.p}}
+              </span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display: flex; gap: 10px; padding: 12px 16px 14px">
+          <button onClick="{{toggleRoute}}" aria-pressed="{{routePressed}}" style="flex: 1; height: 48px; border-radius: 14px; border: 1.5px solid #1E3A32; background: {{routeBg}}; color: {{routeColor}}; font-family: inherit; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="{{routeColor}}" stroke-width="2" stroke-linejoin="round"><path d="M3 11 L21 3 L13 21 L11 13 Z"></path></svg>
+            {{routeText}}
+          </button>
+          <sc-if value="{{sel.canBarter}}" hint-placeholder-val="{{ true }}">
+            <button type="button" class="bp-link" onClick="{{goBapanduk}}" style="flex: 1; height: 48px; border-radius: 14px; background: #9C2E1C; color: #F6EAD2; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; text-decoration: none">Bapanduk</button>
+          </sc-if>
+          <sc-if value="{{sel.cannotBarter}}" hint-placeholder-val="{{ false }}">
+            <span style="flex: 1; height: 48px; border-radius: 14px; background: #EADFCB; color: #6A5644; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 8px">{{sel.reason}}</span>
+          </sc-if>
+        </div>
+      </section>
+    </sc-if>
+  </div>
+
+  <nav aria-label="Navigasi utama" style="position: absolute; left: 0; right: 0; bottom: 0; height: 74px; padding-bottom: 10px; box-sizing: border-box; display: flex; background: #FBF7F0; border-top: 1px solid #E2D4BE; z-index: 6">
+    <button type="button" class="bp-link" onClick="{{goBeranda}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M2 14 L8 11 L12 3 L16 11 L22 14 M5 13 V21 H19 V13 M10 21 V16 H14 V21"></path></svg>
+      Beranda
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button aria-current="page" style="flex: 1; border: none; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-family: inherit; font-size: 11px; font-weight: 800; color: #1E3A32; cursor: pointer">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1E3A32" stroke-width="1.9" stroke-linejoin="round"><path d="M3 6 L9 4 L15 6 L21 4 V18 L15 20 L9 18 L3 20 Z M9 4 V18 M15 6 V20"></path></svg>
+      Peta
+      <span style="width: 6px; height: 6px; transform: rotate(45deg); background: #D8962A"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goKoin}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 L16 12 L12 17 L8 12 Z"></path></svg>
+      Koin
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+    <button type="button" class="bp-link" onClick="{{goProfil}}" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: #6A5644; text-decoration: none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#6A5644" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg>
+      Profil
+      <span style="width: 6px; height: 6px"></span>
+    </button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"go":{"editor":null},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'semua', hour: 5.5, sel: null, route: false, zoom: 1 };
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var PX = 196, PY = 248;
+    var ACIL = [
+      { id: 'khadijah', name: 'Acil Khadijah', short: 'Khadijah', x: 110, y: 162, open: 4.75, close: 8, spec: 'Iwak sungai', goods: [
+        { n: 'Iwak haruan segar', u: 'per ekor', p: 6, cat: 'iwak', b: true },
+        { n: 'Iwak papuyu', u: 'per ikat', p: 5, cat: 'iwak', b: true },
+        { n: 'Iwak asin sepat', u: 'per ikat', p: 4, cat: 'iwak', b: true },
+        { n: 'Iwak saluang', u: 'per bungkus', p: 3, cat: 'iwak', b: false } ] },
+      { id: 'maimunah', name: 'Acil Maimunah', short: 'Maimunah', x: 48, y: 112, open: 5, close: 8.5, spec: 'Wadai Banjar', goods: [
+        { n: 'Bingka kentang', u: 'per potong', p: 3, cat: 'wadai', b: true },
+        { n: 'Amparan tatak pisang', u: 'per potong', p: 3, cat: 'wadai', b: true },
+        { n: 'Sarimuka', u: 'per potong', p: 2, cat: 'wadai', b: true },
+        { n: 'Kue cincin', u: 'per bungkus', p: 2, cat: 'wadai', b: false } ] },
+      { id: 'aminah', name: 'Acil Aminah', short: 'Aminah', x: 166, y: 188, open: 6, close: 9, spec: 'Sayur & buah kebun', goods: [
+        { n: 'Jeruk siam Banjar', u: 'per kilo', p: 5, cat: 'buah', b: true },
+        { n: 'Pisang mahuli', u: 'per sisir', p: 4, cat: 'buah', b: true },
+        { n: 'Kangkung', u: 'per ikat', p: 1, cat: 'sayur', b: true },
+        { n: 'Kacang panjang', u: 'per ikat', p: 2, cat: 'sayur', b: true } ] },
+      { id: 'salmah', name: 'Acil Salmah', short: 'Salmah', x: 254, y: 318, open: 5, close: 7.75, spec: 'Buah musiman', goods: [
+        { n: 'Kasturi', u: 'per ikat', p: 6, cat: 'buah', b: true },
+        { n: 'Ramania', u: 'per kilo', p: 5, cat: 'buah', b: true },
+        { n: 'Rambutan', u: 'per ikat', p: 4, cat: 'buah', b: true },
+        { n: 'Cempedak', u: 'per buah', p: 7, cat: 'buah', b: false } ] },
+      { id: 'rusmini', name: 'Acil Rusmini', short: 'Rusmini', x: 302, y: 388, open: 5.25, close: 9, spec: 'Kerajinan tangan', goods: [
+        { n: 'Tanggui purun', u: 'per buah', p: 12, cat: 'kerajinan', b: true },
+        { n: 'Bakul purun', u: 'per buah', p: 8, cat: 'kerajinan', b: true },
+        { n: 'Gantungan kunci jukung', u: 'per buah', p: 3, cat: 'kerajinan', b: true },
+        { n: 'Kain sasirangan', u: 'per lembar', p: 30, cat: 'kerajinan', b: false } ] },
+      { id: 'jubaidah', name: 'Acil Jubaidah', short: 'Jubaidah', x: 118, y: 340, open: 4.5, close: 7.5, spec: 'Warung terapung', goods: [
+        { n: 'Nasi kuning masak habang', u: 'per bungkus', p: 5, cat: 'makanan', b: false },
+        { n: 'Soto Banjar', u: 'per mangkuk', p: 6, cat: 'makanan', b: false },
+        { n: 'Kopi & teh panas', u: 'per gelas', p: 2, cat: 'makanan', b: false } ] },
+      { id: 'hamidah', name: 'Acil Hamidah', short: 'Hamidah', x: 54, y: 388, open: 4.5, close: 6.5, spec: 'Sayur rawa', goods: [
+        { n: 'Kalakai', u: 'per ikat', p: 2, cat: 'sayur', b: true },
+        { n: 'Genjer', u: 'per ikat', p: 1, cat: 'sayur', b: true },
+        { n: 'Terong pipit', u: 'per bungkus', p: 2, cat: 'sayur', b: true },
+        { n: 'Cabai rawit', u: 'per ons', p: 2, cat: 'sayur', b: true } ] }
+    ];
+    var CHIPS = [
+      { id: 'semua', label: 'Semua' }, { id: 'iwak', label: 'Iwak' }, { id: 'sayur', label: 'Sayur' },
+      { id: 'buah', label: 'Buah' }, { id: 'wadai', label: 'Wadai' }, { id: 'kerajinan', label: 'Kerajinan' },
+      { id: 'makanan', label: 'Makanan' }
+    ];
+    function fmt(h) {
+      var hh = Math.floor(h); var mm = Math.round((h - hh) * 60);
+      return (hh < 10 ? '0' : '') + hh + '.' + (mm < 10 ? '0' : '') + mm;
+    }
+    var h = s.hour;
+    var f = s.filter;
+    function isOpen(a) { return a.open <= h && h < a.close; }
+    function hasCat(a) { return f === 'semua' || a.goods.some(function (g) { return g.cat === f; }); }
+
+    var activeCount = 0;
+    ACIL.forEach(function (a) { if (isOpen(a)) activeCount++; });
+
+    var boats = ACIL.map(function (a, i) {
+      var on = isOpen(a);
+      var match = hasCat(a);
+      var picked = s.sel === a.id;
+      var sub = on ? a.goods.length + ' dagangan' : (h < a.open ? 'buka ' + fmt(a.open) : 'sudah bulik');
+      return {
+        short: a.short,
+        sub: sub,
+        subColor: on ? '#1E3A32' : '#6A5644',
+        aria: a.name + ', ' + a.spec + ', ' + sub,
+        pressed: picked ? 'true' : 'false',
+        left: a.x - 26,
+        top: a.y - 26,
+        hull: on ? '#1E3A32' : '#A99B85',
+        hat: on ? '#D8962A' : '#CFC2A8',
+        ring: picked ? 'rgba(251, 247, 240, 0.95)' : 'transparent',
+        opacity: match ? (on ? 1 : 0.7) : 0.28,
+        match: f !== 'semua' && match && on,
+        delay: (i * 0.37).toFixed(2),
+        pick: function () { self.setState({ sel: picked ? null : a.id, route: false }); }
+      };
+    });
+
+    var chips = CHIPS.map(function (c) {
+      var on = c.id === f;
+      return {
+        label: c.label,
+        pressed: on ? 'true' : 'false',
+        bg: on ? '#1E3A32' : '#FBF7F0',
+        border: on ? '#1E3A32' : '#E2D4BE',
+        color: on ? '#F6EAD2' : '#24180F',
+        pick: function () { self.setState({ filter: c.id }); }
+      };
+    });
+
+    var a = null;
+    ACIL.forEach(function (x) { if (x.id === s.sel) a = x; });
+
+    var z = s.zoom, tx, ty;
+    if (a) {
+      z = Math.max(s.zoom, 1.3);
+      tx = 195 - z * a.x;
+      ty = 120 - z * a.y;
+    } else {
+      tx = 195 - z * 195;
+      ty = 230 - z * 230;
+    }
+
+    var sel = { name: '', spec: '', dist: '', status: '', statusColor: '#6A5644', count: 0, goods: [], canBarter: false, cannotBarter: false, reason: '' };
+    var routeD = '', targetL = 0, targetT = 0, routeText = 'Arahkan';
+    if (a) {
+      var on = isOpen(a);
+      var dx = a.x - PX, dy = a.y - PY;
+      var len = Math.sqrt(dx * dx + dy * dy) || 1;
+      var meters = Math.max(20, Math.round(len * 1.1 / 10) * 10);
+      var mins = Math.max(1, Math.round(meters / 60));
+      var cx = (PX + a.x) / 2 + (-dy / len) * len * 0.22;
+      var cy = (PY + a.y) / 2 + (dx / len) * len * 0.22;
+      routeD = 'M' + PX + ' ' + PY + ' Q' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ' + a.x + ' ' + a.y;
+      targetL = a.x - 28; targetT = a.y - 28;
+      routeText = s.route ? meters + ' m · ' + mins + ' menit' : 'Arahkan';
+      var anyBarter = a.goods.some(function (g) { return g.b; });
+      sel = {
+        name: a.name,
+        spec: a.spec,
+        dist: '± ' + meters + ' m dari pian',
+        status: on ? 'Berjualan sampai ' + fmt(a.close) + ' WITA' : (h < a.open ? 'Belum datang · buka ' + fmt(a.open) + ' WITA' : 'Sudah bulik · tutup ' + fmt(a.close) + ' WITA'),
+        statusColor: on ? '#1E3A32' : '#9C2E1C',
+        count: a.goods.length,
+        goods: a.goods.map(function (g) {
+          var hit = f !== 'semua' && g.cat === f;
+          return {
+            n: g.n, u: g.u, p: g.p, b: g.b,
+            bg: hit ? '#F6E7C8' : '#FFFFFF',
+            border: hit ? '#DDB26A' : '#EFE5D4',
+            isIwak: g.cat === 'iwak', isSayur: g.cat === 'sayur', isBuah: g.cat === 'buah',
+            isWadai: g.cat === 'wadai', isKerajinan: g.cat === 'kerajinan', isMakanan: g.cat === 'makanan'
+          };
+        }),
+        canBarter: on && anyBarter,
+        cannotBarter: !(on && anyBarter),
+        reason: !on ? 'Acil tidak sedang berjualan' : 'Hanya jual pakai koin'
+      };
+    }
+
+    var go = this.props.go;
+    function nav(x) { return function () { if (typeof go === 'function') go(x); }; }
+    var crowd = h < 4.75 ? 'Acil mulai berdatangan' : (h < 7 ? 'Paling ramai' : (h < 8 ? 'Mulai sepi' : 'Pasar hampir usai'));
+
+    return {
+      goBeranda: nav('beranda'), goPeta: nav('peta'), goKoin: nav('koin'),
+      goProfil: nav('profil'), goBapanduk: nav('bapanduk'), goPindai: nav('pindai'),
+      activeCount: activeCount,
+      chips: chips,
+      boats: boats,
+      tx: tx.toFixed(1), ty: ty.toFixed(1), z: z,
+      hour: h,
+      hourText: fmt(h),
+      crowd: crowd,
+      onHour: function (e) { self.setState({ hour: parseFloat(e.target.value) }); },
+      zoomIn: function () { self.setState({ zoom: Math.min(1.9, Math.round((self.state.zoom + 0.3) * 10) / 10) }); },
+      zoomOut: function () { self.setState({ zoom: Math.max(1, Math.round((self.state.zoom - 0.3) * 10) / 10) }); },
+      hasSel: !!a,
+      noSel: !a,
+      sel: sel,
+      closeSel: function () { self.setState({ sel: null, route: false }); },
+      showRoute: !!a && s.route,
+      routeD: routeD,
+      targetL: targetL,
+      targetT: targetT,
+      toggleRoute: function () { self.setState({ route: !self.state.route }); },
+      routePressed: s.route ? 'true' : 'false',
+      routeBg: s.route ? '#1E3A32' : 'transparent',
+      routeColor: s.route ? '#F6EAD2' : '#1E3A32',
+      routeText: routeText
+    };
+  }
+}
+</script>
+</body>
+</html>

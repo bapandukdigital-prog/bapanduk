@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Bapanduk · Halaman Awal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5A3418}a:hover{color:#3B2210}
+@keyframes bp-in{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes bp-fade{from{opacity:0}to{opacity:1}}
+@keyframes bp-breathe{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes bp-drift{from{transform:translateX(0)}to{transform:translateX(-32px)}}
+.bp-in{animation:bp-in .9s cubic-bezier(.2,.8,.2,1) both}
+.bp-fade{animation:bp-fade .8s ease-out .6s both}
+.bp-breathe{animation:bp-breathe 1.8s ease-in-out 1.2s infinite both}
+.bp-drift{animation:bp-drift 3s linear infinite}
+</style>
+</helmet>
+<a href="Masuk.dc.html" aria-label="Mulai Bapanduk" style="width: 390px; height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #FFCF6E; color: #3B2210; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; text-decoration: none">
+
+  <svg width="390" height="844" viewBox="0 0 390 844" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+    <g fill="none" stroke="#F2BC55" stroke-width="2">
+      <path d="M-20 640 C 60 610, 120 670, 200 640 S 340 610, 420 640"></path>
+      <path d="M-20 676 C 60 646, 120 706, 200 676 S 340 646, 420 676"></path>
+      <path d="M-20 712 C 60 682, 120 742, 200 712 S 340 682, 420 712"></path>
+    </g>
+  </svg>
+
+  <div class="bp-in" style="position: relative; display: flex; flex-direction: column; align-items: center">
+    <img src="assets/logo-bapanduk.png" alt="Logo Bapanduk" style="width: 272px; height: 181px; object-fit: contain; display: block">
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; gap: 18px">
+    <span class="bp-breathe" style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #5A3418">
+      Ketuk untuk memulai
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#5A3418" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </span>
+    <div style="width: 390px; height: 14px; overflow: hidden; background: #5A3418">
+      <svg class="bp-drift" width="430" height="14" viewBox="0 0 430 14" aria-hidden="true" style="display: block">
+        <defs>
+          <linearGradient id="sasiranganS" x1="0" y1="0" x2="430" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#D8962A"></stop>
+            <stop offset="0.3" stop-color="#C4572A"></stop>
+            <stop offset="0.55" stop-color="#9C2E1C"></stop>
+            <stop offset="0.8" stop-color="#6B2A55"></stop>
+            <stop offset="1" stop-color="#557A2A"></stop>
+          </linearGradient>
+          <pattern id="gigiHaruanS" width="16" height="14" patternUnits="userSpaceOnUse">
+            <path d="M0 0 L8 0 L0 14 Z M8 0 L16 0 L16 14 Z" fill="#5A3418"></path>
+            <path d="M4.5 14 L8 7.5 L11.5 14 Z" fill="#FFCF6E" fill-opacity="0.55"></path>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="430" height="14" fill="url(#sasiranganS)"></rect>
+        <rect x="0" y="0" width="430" height="14" fill="url(#gigiHaruanS)"></rect>
+      </svg>
+    </div>
+  </div>
+</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
